@@ -48,25 +48,70 @@ Ensure that the code is ready for analysis (either in worktree or on current bra
 
 </task_list>
 
-#### Parallel Agents to review the PR:
+#### Step 2: Discover Available Review Agents
+
+<dynamic_agent_discovery>
+
+**IMPORTANT:** Review agents are discovered dynamically from the plugin's `agents/review/` directory. This ensures new agents are automatically included without manual updates.
+
+**Discovery Process:**
+
+1. List all `.md` files in `agents/review/` directory
+2. Extract agent names (filename without `.md` extension)
+3. Detect project languages to select appropriate language-specific reviewers
+4. Build the list of agents to run
+
+**Language Detection (for Kieran reviewers):**
+
+| PR File Patterns | Language | Kieran Reviewer |
+|------------------|----------|-----------------|
+| `*.rb`, `Gemfile`, `*.erb` | Ruby/Rails | `kieran-rails-reviewer` |
+| `*.ts`, `*.tsx`, `tsconfig.json` | TypeScript | `kieran-typescript-reviewer` |
+| `*.py`, `requirements.txt`, `pyproject.toml` | Python | `kieran-python-reviewer` |
+
+Only run the Kieran reviewer(s) matching the detected language(s). If multiple languages are present, run multiple Kieran reviewers.
+
+</dynamic_agent_discovery>
+
+#### Step 3: Run Review Agents in Parallel
 
 <parallel_tasks>
 
-Run ALL or most of these agents at the same time:
+**Run ALL discovered review agents in parallel.** The current agents in `agents/review/` include:
 
-1. Task kieran-rails-reviewer(PR content)
-2. Task dhh-rails-reviewer(PR title)
-3. If turbo is used: Task rails-turbo-expert(PR content)
-4. Task git-history-analyzer(PR content)
-5. Task dependency-detective(PR content)
-6. Task pattern-recognition-specialist(PR content)
-7. Task architecture-strategist(PR content)
-8. Task code-philosopher(PR content)
-9. Task security-sentinel(PR content)
-10. Task performance-oracle(PR content)
-11. Task devops-harmony-analyst(PR content)
-12. Task data-integrity-guardian(PR content)
-13. Task agent-native-reviewer(PR content) - Verify new features are agent-accessible
+**Always Run (Universal Reviewers):**
+- `agent-native-reviewer` - Verify new features are agent-accessible
+- `architecture-strategist` - Architectural compliance and design review
+- `code-simplicity-reviewer` - Final pass for simplicity and YAGNI
+- `corey-test-reviewer` - Test suite quality and hourglass testing
+- `data-integrity-guardian` - Database and data integrity concerns
+- `jim-git-reviewer` - Git history, commits, and collaboration story
+- `pattern-recognition-specialist` - Design patterns and anti-patterns
+- `performance-oracle` - Performance analysis and optimization
+- `security-sentinel` - Security audits and vulnerability assessment
+
+**Language-Specific (Run based on detected languages):**
+- `kieran-rails-reviewer` - Ruby/Rails conventions (if Ruby detected)
+- `kieran-typescript-reviewer` - TypeScript conventions (if TypeScript detected)
+- `kieran-python-reviewer` - Python conventions (if Python detected)
+- `dhh-rails-reviewer` - DHH's Rails philosophy (if Ruby detected)
+- `julik-frontend-races-reviewer` - JavaScript/Stimulus race conditions (if JS/TS detected)
+
+**Execution:**
+
+```
+# Launch all applicable agents in parallel
+Task agent-native-reviewer(PR diff and context)
+Task architecture-strategist(PR diff and context)
+Task code-simplicity-reviewer(PR diff and context)
+Task corey-test-reviewer(PR diff and test files)
+Task data-integrity-guardian(PR diff and context)
+Task jim-git-reviewer(commit history and PR metadata)
+Task pattern-recognition-specialist(PR diff and context)
+Task performance-oracle(PR diff and context)
+Task security-sentinel(PR diff and context)
+Task [language-specific-reviewers](PR diff and context)
+```
 
 </parallel_tasks>
 
@@ -74,23 +119,19 @@ Run ALL or most of these agents at the same time:
 
 <conditional_agents>
 
-These agents are run ONLY when the PR matches specific criteria. Check the PR files list to determine if they apply:
+These agents run ONLY when the PR matches specific criteria:
 
-**If PR contains database migrations (db/migrate/*.rb files) or data backfills:**
+**If PR contains database migrations or data changes:**
 
-14. Task data-migration-expert(PR content) - Validates ID mappings match production, checks for swapped values, verifies rollback safety
-15. Task deployment-verification-agent(PR content) - Creates Go/No-Go deployment checklist with SQL verification queries
-
-**When to run migration agents:**
+Trigger conditions:
 - PR includes files matching `db/migrate/*.rb`
 - PR modifies columns that store IDs, enums, or mappings
 - PR includes data backfill scripts or rake tasks
-- PR changes how data is read/written (e.g., changing from FK to string column)
-- PR title/body mentions: migration, backfill, data transformation, ID mapping
+- PR title/body mentions: migration, backfill, data transformation
 
-**What these agents check:**
-- `data-migration-expert`: Verifies hard-coded mappings match production reality (prevents swapped IDs), checks for orphaned associations, validates dual-write patterns
-- `deployment-verification-agent`: Produces executable pre/post-deploy checklists with SQL queries, rollback procedures, and monitoring plans
+Run these additional agents:
+- `data-migration-expert` - Validates ID mappings match production, checks for swapped values, verifies rollback safety
+- `deployment-verification-agent` - Creates Go/No-Go deployment checklist with SQL verification queries and rollback procedures
 
 </conditional_agents>
 
@@ -193,26 +234,35 @@ Complete system context map with component interactions
 
 Run the Task code-simplicity-reviewer() to see if we can simplify the code.
 
-### 5. Findings Synthesis and Todo Creation Using file-todos Skill
+### 5. Findings Synthesis with Abby
 
-<critical_requirement> ALL findings MUST be stored in the todos/ directory using the file-todos skill. Create todo files immediately after synthesis - do NOT present findings for user approval first. Use the skill for structured todo management. </critical_requirement>
+<critical_requirement> After all review agents complete, use Abby (abby-review-synthesis) to synthesize findings into a coherent, prioritized summary. Abby acts as the project manager of the review. </critical_requirement>
 
-#### Step 1: Synthesize All Findings
+#### Step 1: Synthesize with Abby
 
-<thinking>
-Consolidate all agent reports into a categorized list of findings.
-Remove duplicates, prioritize by severity and impact.
-</thinking>
+<synthesis_process>
 
-<synthesis_tasks>
+**Pass all agent findings to Abby for synthesis:**
 
-- [ ] Collect findings from all parallel agents
-- [ ] Categorize by type: security, performance, architecture, quality, etc.
-- [ ] Assign severity levels: 🔴 CRITICAL (P1), 🟡 IMPORTANT (P2), 🔵 NICE-TO-HAVE (P3)
-- [ ] Remove duplicate or overlapping findings
-- [ ] Estimate effort for each finding (Small/Medium/Large)
+```
+Task abby-review-synthesis(all agent findings and PR context)
+```
 
-</synthesis_tasks>
+Abby will:
+- Read each reviewer's findings carefully
+- Understand the **weight** each reviewer placed on their findings (not just count mentions)
+- Identify themes across reviewers
+- Resolve conflicts by surfacing disagreements and offering recommendations
+- Categorize into four priority buckets:
+  - 🛑 **Showstoppers** — Must fix before merge (rare)
+  - ⚠️ **Important** — Should fix in this PR or soon after
+  - 💭 **Interesting to Think About** — Worth considering, not blocking
+  - 📋 **Someday Maybe** — Valid but low priority
+- Produce a balanced narrative that respects the work while being honest about what needs attention
+
+**Abby's philosophy:** Review is not about mistakes. It's about finding and building on our expectations of excellence.
+
+</synthesis_process>
 
 #### Step 2: Create Todo Files Using file-todos Skill
 
@@ -367,12 +417,7 @@ After creating all todo files, present comprehensive summary:
 
 ### Review Agents Used:
 
-- kieran-rails-reviewer
-- security-sentinel
-- performance-oracle
-- architecture-strategist
-- agent-native-reviewer
-- [other agents]
+[List all agents that were actually run - discovered dynamically from agents/review/]
 
 ### Next Steps:
 

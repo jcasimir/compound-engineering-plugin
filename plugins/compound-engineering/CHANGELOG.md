@@ -5,6 +5,126 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.33.0] - 2026-02-02
+
+### Added
+
+- **`/workflows:review-deep` command** - Two-round collaborative code review
+  - Round 1: All reviewers analyze independently and produce initial reports
+  - Triage: Abby reviews Round 1 reports and recommends Round 2 participants based on engagement
+  - Round 2: Selected reviewers read ALL colleagues' reports, then rewrite their own with new perspective
+  - Synthesis: Abby consolidates enriched reports highlighting cross-cutting themes
+  - Use for major architectural changes, security-critical features, or pre-launch reviews
+  - Produces deeper insights through collaborative intelligence
+
+### Summary
+
+- 32 agents, 25 commands, 15 skills, 1 MCP server
+
+---
+
+## [2.32.0] - 2026-02-02
+
+### Added
+
+- **`erin-process-reviewer` agent** - Reviews the development process itself
+  - Examines how we got here: traces journey from idea to implementation
+  - Checks process adherence: did we follow our established workflows?
+  - Identifies next steps: what should happen before we're done?
+  - Maps results to plans: scope, approach, timeline, quality comparisons
+  - Recommends documentation: decisions, gotchas, patterns to capture
+  - Extracts planning insights: what to remember next time, process improvements
+  - Guardian of compounding engineering — makes each cycle generate learnings
+
+### Changed
+
+- **All review agents now have names and personalities:**
+  - Robo (agent-native) — Futurist thinking about tomorrow's tech
+  - Maya (architecture) — Systems thinker inspired by architect Maya Lin
+  - Alex (simplicity) — Startup veteran who knows over-engineering kills
+  - Donna (data integrity) — Quiet guardian who speaks up when it matters
+  - Dana (migrations) — Reserved specialist, meticulous about migration safety
+  - Nathan (deployment) — Trusted ops person who makes deploys boring
+  - Sandi (patterns) — Deep thinker who loves research
+  - Florence/Flo-Jo (performance) — Believes in raw speed, every millisecond matters
+  - Kevin (security) — Reformed black hat who thinks like an attacker
+
+### Summary
+
+- 32 agents, 24 commands, 15 skills, 1 MCP server
+
+---
+
+## [2.31.0] - 2026-02-02
+
+### Added
+
+- **`abby-review-synthesis` agent** - Project manager for code review synthesis
+  - Synthesizes findings from all review agents into coherent, prioritized summary
+  - Respects each reviewer's expertise and the weight they place on findings
+  - Four priority categories: Showstoppers, Important, Interesting to Think About, Someday Maybe
+  - Balanced tone: neither cheerleader nor critic
+  - Philosophy: "Review is not about mistakes. It's about finding and building on our expectations of excellence."
+  - Surfaces reviewer disagreements and offers recommendations
+  - Highlights consensus when multiple reviewers agree
+
+### Changed
+
+- **`/workflows:review` command** - Now uses Abby for synthesis
+  - Synthesis step delegates to `abby-review-synthesis` agent
+  - Produces coherent narrative instead of raw finding lists
+  - Priorities based on actual impact, not mention count
+
+### Summary
+
+- 31 agents, 24 commands, 15 skills, 1 MCP server
+
+---
+
+## [2.30.0] - 2026-02-02
+
+### Added
+
+- **`jim-git-reviewer` agent** - Git history and source control reviewer inspired by Jim Weirich
+  - Evaluates Git as storytelling — does the history explain how the codebase evolved?
+  - Reviews commit message quality, granularity, and atomic commits
+  - Checks branch naming, PR descriptions, and collaboration signals
+  - Focuses on communication between past, present, and future developers
+  - History hygiene: WIP commits, squashing, meaningful narrative
+
+### Changed
+
+- **`/workflows:review` command** - Now discovers review agents dynamically
+  - Agents are discovered from `agents/review/` directory at runtime
+  - New agents are automatically included without manual updates
+  - Language-specific reviewers (Kieran) run based on detected project languages
+  - Removed references to non-existent phantom agents
+  - Added `corey-test-reviewer` and `jim-git-reviewer` to default reviews
+
+### Summary
+
+- 30 agents, 24 commands, 15 skills, 1 MCP server
+
+---
+
+## [2.29.0] - 2026-02-02
+
+### Added
+
+- **`corey-test-reviewer` agent** - Dedicated test suite reviewer with hourglass testing philosophy
+  - Emphasizes acceptance tests (top) and domain/unit tests (bottom), skeptical of mid-level integration tests
+  - Pragmatic sad path coverage — everyday failures, not paranoid edge cases ("Tuesday Afternoon" test)
+  - Evaluates tests as documentation - can a developer understand the feature from the tests?
+  - Framework-specific guidance for RSpec (Ruby/Rails) and Jest/Vitest (TypeScript/JS)
+  - Against vanity metrics - doesn't test framework functionality or trivial code
+  - Supports pragmatic test segmentation (performance tests tagged for CI)
+
+### Summary
+
+- 29 agents, 24 commands, 15 skills, 1 MCP server
+
+---
+
 ## [2.28.0] - 2026-01-21
 
 ### Added

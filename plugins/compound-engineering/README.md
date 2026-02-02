@@ -6,41 +6,48 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 
 | Component | Count |
 |-----------|-------|
-| Agents | 27 |
-| Commands | 20 |
-| Skills | 14 |
+| Agents | 32 |
+| Commands | 25 |
+| Skills | 15 |
 | MCP Servers | 1 |
 
 ## Agents
 
 Agents are organized into categories for easier discovery.
 
-### Review (14)
+### Review (18)
 
-| Agent | Description |
-|-------|-------------|
-| `agent-native-reviewer` | Verify features are agent-native (action + context parity) |
-| `architecture-strategist` | Analyze architectural decisions and compliance |
-| `code-simplicity-reviewer` | Final pass for simplicity and minimalism |
-| `data-integrity-guardian` | Database migrations and data integrity |
-| `data-migration-expert` | Validate ID mappings match production, check for swapped values |
-| `deployment-verification-agent` | Create Go/No-Go deployment checklists for risky data changes |
-| `dhh-rails-reviewer` | Rails review from DHH's perspective |
-| `kieran-rails-reviewer` | Rails code review with strict conventions |
-| `kieran-python-reviewer` | Python code review with strict conventions |
-| `kieran-typescript-reviewer` | TypeScript code review with strict conventions |
-| `pattern-recognition-specialist` | Analyze code for patterns and anti-patterns |
-| `performance-oracle` | Performance analysis and optimization |
-| `security-sentinel` | Security audits and vulnerability assessments |
-| `julik-frontend-races-reviewer` | Review JavaScript/Stimulus code for race conditions |
+All review agents have names and personalities to make feedback more engaging and memorable.
 
-### Research (4)
+| Agent | Name | Description |
+|-------|------|-------------|
+| `abby-review-synthesis` | Abby | PM who synthesizes findings, respects each reviewer's expertise |
+| `agent-native-reviewer` | Robo | Futurist ensuring features work for AI agents, not just humans |
+| `architecture-strategist` | Maya | Systems thinker who sees structure like an architect sees buildings |
+| `code-simplicity-reviewer` | Alex | Startup veteran who knows over-engineering kills projects |
+| `corey-test-reviewer` | Corey | Hourglass testing advocate, pragmatic about sad paths |
+| `data-integrity-guardian` | Donna | Quiet guardian who speaks up when data is at risk |
+| `data-migration-expert` | Dana | Reserved specialist, meticulous about migration safety |
+| `deployment-verification-agent` | Nathan | Trusted ops person who makes deploys boring and safe |
+| `dhh-rails-reviewer` | DHH | Rails review from David Heinemeier Hansson's perspective |
+| `erin-process-reviewer` | Erin | Process guardian, ensures we learn from each cycle |
+| `jim-git-reviewer` | Jim | Git as storytelling (tribute to Jim Weirich) |
+| `julik-frontend-races-reviewer` | Julik | Spots race conditions in JavaScript and Stimulus code |
+| `kieran-rails-reviewer` | Kieran | Rails code review with strict conventions |
+| `kieran-python-reviewer` | Kieran | Python code review with strict conventions |
+| `kieran-typescript-reviewer` | Kieran | TypeScript code review with strict conventions |
+| `pattern-recognition-specialist` | Sandi | Deep thinker who researches patterns and best practices |
+| `performance-oracle` | Florence | Flo-Jo believes in raw speed — every millisecond matters |
+| `security-sentinel` | Kevin | Reformed black hat who thinks like an attacker |
+
+### Research (5)
 
 | Agent | Description |
 |-------|-------------|
 | `best-practices-researcher` | Gather external best practices and examples |
 | `framework-docs-researcher` | Research framework documentation and best practices |
 | `git-history-analyzer` | Analyze git history and code evolution |
+| `learnings-researcher` | Search institutional learnings in docs/solutions/ for relevant past solutions |
 | `repo-research-analyst` | Research repository structure and conventions |
 
 ### Design (3)
@@ -78,6 +85,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | `/workflows:brainstorm` | Explore requirements and approaches before planning |
 | `/workflows:plan` | Create implementation plans |
 | `/workflows:review` | Run comprehensive code reviews |
+| `/workflows:review-deep` | Two-round collaborative review where reviewers learn from each other |
 | `/workflows:work` | Execute work items systematically |
 | `/workflows:compound` | Document solved problems to compound team knowledge |
 
