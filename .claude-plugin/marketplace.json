@@ -1,11 +1,11 @@
 {
-  "name": "every-marketplace",
+  "name": "jcasimir-marketplace",
   "owner": {
-    "name": "Kieran Klaassen",
-    "url": "https://github.com/kieranklaassen"
+    "name": "Jeff Casimir",
+    "url": "https://github.com/jcasimir"
   },
   "metadata": {
-    "description": "Plugin marketplace for Claude Code extensions",
+    "description": "Jeff's customized Claude Code plugin marketplace",
     "version": "1.0.0"
   },
   "plugins": [
