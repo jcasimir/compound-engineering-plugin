@@ -46,7 +46,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Summary
 
-- 36 agents, 25 commands, 15 skills, 1 MCP server
+- **`/plan_review-deep` command** - Two-round collaborative plan review
+  - Round 1: All 5 plan reviewers analyze independently
+  - Triage: Erin recommends Round 2 participants based on findings and cross-connections
+  - Round 2: Selected reviewers read ALL colleagues' reports, then rewrite with enriched perspective
+  - Synthesis: Erin consolidates into prioritized findings with cross-cutting themes
+  - Reviewers explicitly reference each other: "Marty's validation concerns reinforce..."
+
+- 36 agents, 26 commands, 15 skills, 1 MCP server
 
 ---
 
