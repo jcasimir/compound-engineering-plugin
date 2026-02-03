@@ -23,7 +23,7 @@ Compound engineering inverts this. 80% is in planning and review, 20% is in exec
 ## Quick Start
 
 ```bash
-/workflow:all I want to build [your feature]
+/workflow:full I want to build [your feature]
 ```
 
 **Erin** is your project manager. She guides you through the entire workflow, ensuring steps happen in the right order and nothing gets missed.
@@ -33,12 +33,12 @@ Compound engineering inverts this. 80% is in planning and review, 20% is in exec
 Erin orchestrates these phases (or invoke them directly):
 
 ```
-/workflow:all → Brainstorm → Plan → Plan Review → Code → Code Review → Compound → Repeat
+/workflow:full → Brainstorm → Plan → Plan Review → Code → Code Review → Compound → Repeat
 ```
 
 | # | Command | Purpose |
 |---|---------|---------|
-| — | `/workflow:all` | **Start here.** Project manager for the full workflow |
+| — | `/workflow:full` | **Start here.** Project manager for the full workflow |
 | 0 | `/workflow:0-brainstorm` | Explore requirements before planning |
 | 1 | `/workflow:1-plan` | Turn feature ideas into detailed implementation plans |
 | 2 | `/workflow:2-plan-review` | Multi-agent plan review before coding |

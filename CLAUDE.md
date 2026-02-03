@@ -21,7 +21,7 @@ Agents are named by workflow phase prefix:
 
 ## Getting Started
 
-**Start with Erin:** `/workflow:all [what you want to build]`
+**Start with Erin:** `/workflow:full [what you want to build]`
 
 Erin is the project manager who orchestrates the entire workflow. She'll guide you through the right steps based on your project's scope.
 
@@ -30,7 +30,7 @@ Erin is the project manager who orchestrates the entire workflow. She'll guide y
 Erin manages these phases (or invoke directly):
 
 ```
-/workflow:all → 0-brainstorm → 1-plan → 2-plan-review → 3-code → 4-code-review → 5-compound
+/workflow:full → 0-brainstorm → 1-plan → 2-plan-review → 3-code → 4-code-review → 5-compound
 ```
 
 ## Adding Components
