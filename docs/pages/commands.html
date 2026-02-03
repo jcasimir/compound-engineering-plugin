@@ -107,7 +107,7 @@
                 </ul>
               </li>
               <li><strong>Write Plan</strong> - Save as <code>plans/&lt;issue_title&gt;.md</code></li>
-              <li><strong>Review</strong> - Call <code>/plan_review</code> for multi-agent feedback</li>
+              <li><strong>Review</strong> - Call <code>/workflows:2-plan-review</code> for multi-agent feedback</li>
             </ol>
             <div class="callout callout-info">
               <div class="callout-icon"><i class="fa-solid fa-circle-info"></i></div>
@@ -326,21 +326,29 @@
 
           <div class="command-detail" id="plan-review">
             <div class="command-detail-header">
-              <code class="command-detail-name">/plan_review</code>
+              <code class="command-detail-name">/workflows:2-plan-review</code>
             </div>
             <p class="command-detail-description">
-              Before you execute a plan, have three reviewers tear it apart—Rails conventions, best practices, simplicity. Better to find the problems in the plan than in production.
+              Before you execute a plan, have eight reviewers tear it apart—product strategy and technical architecture. Better to find the problems in the plan than in production.
             </p>
             <h4>Arguments</h4>
             <p><code>[plan file path or plan content]</code></p>
-            <h4>Review Agents</h4>
+            <h4>Product & Strategy Reviewers</h4>
             <ul>
-              <li><code>dhh-rails-reviewer</code> - Rails conventions</li>
-              <li><code>kieran-rails-reviewer</code> - Rails best practices</li>
-              <li><code>code-simplicity-reviewer</code> - Simplicity and clarity</li>
+              <li><code>jason-fried-plan-reviewer</code> - Scope & sustainability</li>
+              <li><code>charles-eames-plan-reviewer</code> - Systems & constraints</li>
+              <li><code>marty-cagan-plan-reviewer</code> - Discovery & validation</li>
+              <li><code>melissa-perri-plan-reviewer</code> - Outcomes & strategy</li>
+              <li><code>sandy-speicher-plan-reviewer</code> - Human-centered & equity</li>
+            </ul>
+            <h4>Technical Architecture Reviewers</h4>
+            <ul>
+              <li><code>steve-frontend-architect</code> - Frontend architecture</li>
+              <li><code>avi-rails-architect</code> - Rails architecture</li>
+              <li><code>greg-ai-reviewer</code> - AI integration</li>
             </ul>
             <div class="card-code-block">
-              <pre><code>/plan_review plans/user-authentication.md</code></pre>
+              <pre><code>/workflows:2-plan-review plans/user-authentication.md</code></pre>
             </div>
           </div>
 

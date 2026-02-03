@@ -151,7 +151,7 @@ Commands for full autonomous workflows:
 
 | Command | Description |
 |---------|-------------|
-| `/lfg` | Full autonomous engineering workflow. Runs plan → deepen-plan → work → review → resolve todos → test-browser → feature-video in sequence. |
+| `/lfg` | Full autonomous engineering workflow. Runs 1-plan → 1-plan:deep → 3-code → 4-code-review → resolve todos → test-browser → feature-video in sequence. |
 | `/agent-native-audit` | Comprehensive review against agent-native architecture principles (Action Parity, Tools as Primitives, Context Injection, etc.) with scored report. |
 
 ## Skills
