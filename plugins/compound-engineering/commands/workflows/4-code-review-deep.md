@@ -1,5 +1,5 @@
 ---
-name: workflows:review-deep
+name: workflows:4-code-review:deep
 description: Two-round collaborative code review where reviewers learn from each other before finalizing
 argument-hint: "[PR number, GitHub URL, branch name, or latest]"
 ---
@@ -301,7 +301,7 @@ Notable observations from the cross-pollination process:
 
 ### Create Todo Files
 
-Use the file-todos skill to create todo files for findings, following the standard process from `/workflows:review`.
+Use the file-todos skill to create todo files for findings, following the standard process from `/workflows:4-code-review`.
 
 ---
 

@@ -44,13 +44,20 @@ skills/
 
 ## Command Naming Convention
 
-**Workflow commands** use `workflows:` prefix to avoid collisions with built-in commands:
-- `/workflows:plan` - Create implementation plans
-- `/workflows:review` - Run comprehensive code reviews
-- `/workflows:work` - Execute work items systematically
-- `/workflows:compound` - Document solved problems
+**Workflow commands** use `workflows:` prefix with numbered sequence:
 
-**Why `workflows:`?** Claude Code has built-in `/plan` and `/review` commands. Using `name: workflows:plan` in frontmatter creates a unique `/workflows:plan` command with no collision.
+| # | Command | Deep Variant | Purpose |
+|---|---------|--------------|---------|
+| 0 | `/workflows:0-brainstorm` | — | Explore requirements |
+| 1 | `/workflows:1-plan` | `/workflows:1-plan:deep` | Create implementation plans |
+| 2 | `/workflows:2-plan-review` | `/workflows:2-plan-review:deep` | Review plans before coding |
+| 3 | `/workflows:3-code` | — | Execute work items |
+| 4 | `/workflows:4-code-review` | `/workflows:4-code-review:deep` | Review code after implementation |
+| 5 | `/workflows:5-compound` | — | Document solved problems |
+
+**Why numbered?** The sequence shows the natural development flow. Deep variants use `:deep` suffix.
+
+**Why `workflows:`?** Claude Code has built-in `/plan` and `/review` commands. Using `name: workflows:1-plan` in frontmatter creates a unique command with no collision.
 
 ## Skill Compliance Checklist
 

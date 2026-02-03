@@ -84,26 +84,16 @@ This plugin provides 26 commands organized into categories. Core workflow comman
 
 ### Workflow Commands
 
-The primary development workflow commands that form the backbone of the compounding engineering process:
+The primary development workflow commands that form the backbone of the compounding engineering process. Commands are numbered to show the natural sequence:
 
-| Command | Description |
-|---------|-------------|
-| `/workflows:brainstorm` | Explore requirements and approaches through collaborative dialogue before planning implementation. Helps answer **WHAT** to build before `/workflows:plan` answers **HOW**. |
-| `/workflows:plan` | Transform feature descriptions, bug reports, or improvement ideas into well-structured markdown plans following project conventions. |
-| `/workflows:work` | Execute work plans efficiently while maintaining quality. Takes a plan file and systematically implements it, following existing patterns. |
-| `/workflows:review` | Perform exhaustive code reviews using multi-agent analysis, ultra-thinking, and Git worktrees for deep local inspection. |
-| `/workflows:review-deep` | Two-round collaborative review where reviewers first analyze independently, then read each other's reports and produce enriched final reviews. Use for major architectural changes or security-critical features. |
-| `/workflows:compound` | Document a recently solved problem to compound your team's knowledge. Creates structured documentation in `docs/solutions/` with YAML frontmatter for searchability. |
-
-### Plan Enhancement Commands
-
-Commands for reviewing and deepening implementation plans:
-
-| Command | Description |
-|---------|-------------|
-| `/deepen-plan` | Enhance a plan with parallel research agents for each section. Each major element gets dedicated research for best practices, performance optimizations, and real-world implementation examples. |
-| `/plan_review` | Have five specialized plan reviewers (Jason Fried, Charles Eames, Marty Cagan, Melissa Perri, Sandy Speicher) analyze a plan in parallel. |
-| `/plan_review-deep` | Two-round plan review where reviewers first analyze independently, then read each other's reports and produce enriched final reviews informed by diverse perspectives. |
+| # | Command | Deep Variant | Description |
+|---|---------|--------------|-------------|
+| 0 | `/workflows:0-brainstorm` | — | Explore requirements and approaches through collaborative dialogue. Answers **WHAT** to build. |
+| 1 | `/workflows:1-plan` | `/workflows:1-plan:deep` | Transform feature descriptions into well-structured markdown plans. Deep variant adds parallel research for each section. |
+| 2 | `/workflows:2-plan-review` | `/workflows:2-plan-review:deep` | Have 8 specialized reviewers (product strategy + technical architecture) analyze a plan. Deep variant adds two-round cross-pollination. |
+| 3 | `/workflows:3-code` | — | Execute work plans efficiently while maintaining quality. Takes a plan file and implements it systematically. |
+| 4 | `/workflows:4-code-review` | `/workflows:4-code-review:deep` | Perform exhaustive code reviews using multi-agent analysis. Deep variant adds two-round collaborative review. |
+| 5 | `/workflows:5-compound` | — | Document a recently solved problem. Creates structured docs in `docs/solutions/` with YAML frontmatter. |
 
 ### Parallel Resolution Commands
 

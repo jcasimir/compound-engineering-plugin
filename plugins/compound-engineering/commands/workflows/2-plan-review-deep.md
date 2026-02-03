@@ -1,5 +1,5 @@
 ---
-name: plan_review-deep
+name: workflows:2-plan-review:deep
 description: Two-round collaborative plan review where reviewers learn from each other before finalizing
 argument-hint: "[plan file path or plan content]"
 ---

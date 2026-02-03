@@ -1,5 +1,5 @@
 ---
-name: plan_review
+name: workflows:2-plan-review
 description: Have multiple specialized agents review a plan in parallel
 argument-hint: "[plan file path or plan content]"
 ---
