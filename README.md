@@ -1,273 +1,80 @@
-# Compounding Engineering Plugin
+# Compound Engineering Plugin
 
 AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last.
 
-## Components
+## Philosophy
 
-| Component | Count |
-|-----------|-------|
-| Agents | 36 |
-| Commands | 26 |
-| Skills | 15 |
-| MCP Servers | 1 |
+**Each unit of engineering work should make subsequent units easier—not harder.**
 
-## Agents
+Traditional development accumulates technical debt. Every feature adds complexity. The codebase becomes harder to work with over time.
 
-Agents are organized into categories for easier discovery.
+Compound engineering inverts this. 80% is in planning and review, 20% is in execution:
+- Plan thoroughly before writing code
+- Review to catch issues and capture learnings
+- Codify knowledge so it's reusable
+- Keep quality high so future changes are easy
 
-### Reviewers (22)
-
-All review agents have names and personalities to make feedback more engaging and memorable.
-
-| Agent | Name | Role |
-|-------|------|------|
-| `abby-review-synthesis` | Abby | Review Synthesis Lead |
-| `agent-native-reviewer` | Robo | Agent Native Reviewer |
-| `architecture-strategist` | Maya | Architecture Strategist |
-| `avi-rails-architect` | Avi (Avi Flombaum) | Rails Technical Architect |
-| `charles-eames-plan-reviewer` | Charles (Charles Eames) | Design Systems Thinker |
-| `code-simplicity-reviewer` | Alex | Simplicity Advocate |
-| `corey-test-reviewer` | Corey (Corey Haines) | Testing Coach |
-| `data-integrity-guardian` | Donna | Data Guardian |
-| `data-migration-expert` | Dana | Migration Expert |
-| `deployment-verification-agent` | Nathan | Deployment Lead |
-| `erin-process-reviewer` | Erin | Process Guardian |
-| `greg-ai-reviewer` | Greg (Greg Baugues) | AI Pragmatist |
-| `jason-fried-plan-reviewer` | Jason (Jason Fried) | Scope Restraint Champion |
-| `jim-git-reviewer` | Jim (Jim Weirich) | Git Historian |
-| `julik-frontend-races-reviewer` | Julik | Race Condition Hunter |
-| `marty-cagan-plan-reviewer` | Marty (Marty Cagan) | Product Discovery Advocate |
-| `melissa-perri-plan-reviewer` | Melissa (Melissa Perri) | Build Trap Escapist |
-| `pattern-recognition-specialist` | Sandi | Pattern Analyst |
-| `performance-oracle` | Florence (Flo-Jo) | Performance Oracle |
-| `sandy-speicher-plan-reviewer` | Sandy (Sandy Speicher) | Human-Centered Designer |
-| `security-sentinel` | Kevin (Kevin Mitnick) | Security Researcher |
-| `steve-frontend-architect` | Steve (Steve Kinney) | Frontend Architect |
-
-### Research (5)
-
-| Agent | Description |
-|-------|-------------|
-| `best-practices-researcher` | Gather external best practices and examples |
-| `framework-docs-researcher` | Research framework documentation and best practices |
-| `git-history-analyzer` | Analyze git history and code evolution |
-| `learnings-researcher` | Search institutional learnings in docs/solutions/ for relevant past solutions |
-| `repo-research-analyst` | Research repository structure and conventions |
-
-### Design (3)
-
-| Agent | Description |
-|-------|-------------|
-| `design-implementation-reviewer` | Verify UI implementations match Figma designs |
-| `design-iterator` | Iteratively refine UI through systematic design iterations |
-| `figma-design-sync` | Synchronize web implementations with Figma designs |
-
-### Workflow (5)
-
-| Agent | Description |
-|-------|-------------|
-| `bug-reproduction-validator` | Systematically reproduce and validate bug reports |
-| `every-style-editor` | Edit content to conform to Every's style guide |
-| `lint` | Run linting and code quality checks on Ruby and ERB files |
-| `pr-comment-resolver` | Address PR comments and implement fixes |
-| `spec-flow-analyzer` | Analyze user flows and identify gaps in specifications |
-
-### Docs (1)
-
-| Agent | Description |
-|-------|-------------|
-| `ankane-readme-writer` | Create READMEs following Ankane-style template for Ruby gems |
-
-## Commands
-
-This plugin provides 26 commands organized into categories. Core workflow commands use `workflows:` prefix to avoid collisions with Claude Code's built-in commands.
-
-### Workflow Commands
-
-The primary development workflow commands that form the backbone of the compounding engineering process. Commands are numbered to show the natural sequence:
-
-| # | Command | Deep Variant | Description |
-|---|---------|--------------|-------------|
-| 0 | `/workflows:0-brainstorm` | — | Explore requirements and approaches through collaborative dialogue. Answers **WHAT** to build. |
-| 1 | `/workflows:1-plan` | `/workflows:1-plan:deep` | Transform feature descriptions into well-structured markdown plans. Deep variant adds parallel research for each section. |
-| 2 | `/workflows:2-plan-review` | `/workflows:2-plan-review:deep` | Have 8 specialized reviewers (product strategy + technical architecture) analyze a plan. Deep variant adds two-round cross-pollination. |
-| 3 | `/workflows:3-code` | — | Execute work plans efficiently while maintaining quality. Takes a plan file and implements it systematically. |
-| 4 | `/workflows:4-code-review` | `/workflows:4-code-review:deep` | Perform exhaustive code reviews using multi-agent analysis. Deep variant adds two-round collaborative review. |
-| 5 | `/workflows:5-compound` | — | Document a recently solved problem. Creates structured docs in `docs/solutions/` with YAML frontmatter. |
-
-### Parallel Resolution Commands
-
-Commands that leverage parallel processing to resolve multiple items simultaneously:
-
-| Command | Description |
-|---------|-------------|
-| `/resolve_parallel` | Find all TODO comments in the codebase, analyze dependencies, and resolve them using parallel sub-agents. Outputs a mermaid flow diagram showing execution order. |
-| `/resolve_pr_parallel` | Get all unresolved PR comments and resolve them in parallel. Automatically detects current branch and associated PR context. |
-| `/resolve_todo_parallel` | Resolve all pending CLI todos from the `todos/*.md` directory using parallel processing. Analyzes dependencies to determine optimal execution order. |
-
-### Testing & QA Commands
-
-Commands for testing, bug reproduction, and quality assurance:
-
-| Command | Description |
-|---------|-------------|
-| `/test-browser` | Run end-to-end browser tests on pages affected by a PR or branch using agent-browser CLI. Supports PR number, branch name, or 'current' for current branch. |
-| `/reproduce-bug` | Investigate a GitHub issue by reading the description, running parallel log investigation agents (Rails console, Appsignal), and analyzing potential failure points. |
-| `/xcode-test` | Build and test iOS apps on simulator using XcodeBuildMCP. Captures screenshots, logs, and verifies app behavior. |
-
-### Documentation Commands
-
-Commands for generating and maintaining documentation:
-
-| Command | Description |
-|---------|-------------|
-| `/changelog` | Create engaging, witty changelogs for recent merges to main branch. Supports daily (24h) or weekly (7 days) summaries with developer credits. |
-| `/release-docs` | Regenerate the documentation site to match current plugin components. Updates stats, reference pages, and validates counts. |
-| `/deploy-docs` | Validate the documentation site and prepare it for GitHub Pages deployment. Runs component counts and JSON validation. |
-| `/feature-video` | Record a video walkthrough demonstrating a feature using agent-browser, upload it, and embed it in the PR description. |
-
-### Skill & Command Management
-
-Commands for creating and fixing plugin components:
-
-| Command | Description |
-|---------|-------------|
-| `/create-agent-skill` | Create or edit Claude Code skills with expert guidance on structure, frontmatter, and best practices. |
-| `/generate_command` | Create a new custom slash command in `.claude/commands/` following conventions. Understands file operations, search, and editing capabilities. |
-| `/heal-skill` | Fix incorrect SKILL.md files when a skill has wrong instructions or outdated API references. Analyzes conversation context to detect issues. |
-
-### Issue Management Commands
-
-Commands for triaging and reporting issues:
-
-| Command | Description |
-|---------|-------------|
-| `/triage` | Go through findings one by one and decide whether to add each to the CLI todo system. For processing code review findings, security audits, or performance analysis. Does NOT write code—triage only. |
-| `/report-bug` | Report a bug in the compound-engineering plugin. Gathers structured information and creates a GitHub issue for the maintainer. |
-
-### Automation Commands
-
-Commands for full autonomous workflows:
-
-| Command | Description |
-|---------|-------------|
-| `/lfg` | Full autonomous engineering workflow. Runs 1-plan → 1-plan:deep → 3-code → 4-code-review → resolve todos → test-browser → feature-video in sequence. |
-| `/agent-native-audit` | Comprehensive review against agent-native architecture principles (Action Parity, Tools as Primitives, Context Injection, etc.) with scored report. |
-
-## Skills
-
-### Architecture & Design
-
-| Skill | Description |
-|-------|-------------|
-| `agent-native-architecture` | Build AI agents using prompt-native architecture |
-
-### Development Tools
-
-| Skill | Description |
-|-------|-------------|
-| `andrew-kane-gem-writer` | Write Ruby gems following Andrew Kane's patterns |
-| `compound-docs` | Capture solved problems as categorized documentation |
-| `create-agent-skills` | Expert guidance for creating Claude Code skills |
-| `dhh-rails-style` | Write Ruby/Rails code in DHH's 37signals style |
-| `dspy-ruby` | Build type-safe LLM applications with DSPy.rb |
-| `frontend-design` | Create production-grade frontend interfaces |
-| `skill-creator` | Guide for creating effective Claude Code skills |
-
-### Content & Workflow
-
-| Skill | Description |
-|-------|-------------|
-| `every-style-editor` | Review copy for Every's style guide compliance |
-| `file-todos` | File-based todo tracking system |
-| `git-worktree` | Manage Git worktrees for parallel development |
-
-### File Transfer
-
-| Skill | Description |
-|-------|-------------|
-| `rclone` | Upload files to S3, Cloudflare R2, Backblaze B2, and cloud storage |
-
-### Browser Automation
-
-| Skill | Description |
-|-------|-------------|
-| `agent-browser` | CLI-based browser automation using Vercel's agent-browser |
-
-### Image Generation
-
-| Skill | Description |
-|-------|-------------|
-| `gemini-imagegen` | Generate and edit images using Google's Gemini API |
-
-**gemini-imagegen features:**
-- Text-to-image generation
-- Image editing and manipulation
-- Multi-turn refinement
-- Multiple reference image composition (up to 14 images)
-
-**Requirements:**
-- `GEMINI_API_KEY` environment variable
-- Python packages: `google-genai`, `pillow`
-
-## MCP Servers
-
-| Server | Description |
-|--------|-------------|
-| `context7` | Framework documentation lookup via Context7 |
-
-### Context7
-
-**Tools provided:**
-- `resolve-library-id` - Find library ID for a framework/package
-- `get-library-docs` - Get documentation for a specific library
-
-Supports 100+ frameworks including Rails, React, Next.js, Vue, Django, Laravel, and more.
-
-MCP servers start automatically when the plugin is enabled.
-
-## Browser Automation
-
-This plugin uses **agent-browser CLI** for browser automation tasks. Install it globally:
-
-```bash
-npm install -g agent-browser
-agent-browser install  # Downloads Chromium
-```
-
-The `agent-browser` skill provides comprehensive documentation on usage.
-
-## Installation
+## Install
 
 ```bash
 /plugin install https://github.com/jcasimir/compound-engineering-plugin
 ```
 
-## Known Issues
+## Workflow
 
-### MCP Servers Not Auto-Loading
-
-**Issue:** The bundled Context7 MCP server may not load automatically when the plugin is installed.
-
-**Workaround:** Manually add it to your project's `.claude/settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "context7": {
-      "type": "http",
-      "url": "https://mcp.context7.com/mcp"
-    }
-  }
-}
+```
+Brainstorm → Plan → Plan Review → Code → Code Review → Compound → Repeat
 ```
 
-Or add it globally in `~/.claude/settings.json` for all projects.
+| # | Command | Purpose |
+|---|---------|---------|
+| 0 | `/workflows:0-brainstorm` | Explore requirements before planning |
+| 1 | `/workflows:1-plan` | Turn feature ideas into detailed implementation plans |
+| 2 | `/workflows:2-plan-review` | Multi-agent plan review before coding |
+| 3 | `/workflows:3-code` | Execute plans with worktrees and task tracking |
+| 4 | `/workflows:4-code-review` | Multi-agent code review before merging |
+| 5 | `/workflows:5-compound` | Document learnings to make future work easier |
 
-## Version History
+Each cycle compounds: plans inform future plans, reviews catch more issues, patterns get documented.
 
-See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
+## Profiles
 
-## License
+Two teams of reviewers guide your work through planning and implementation.
 
-MIT
+### Plan Reviewers (Phase 2)
+
+These reviewers evaluate your plans before you write code, helping you think through scope, strategy, and approach.
+
+| Name | Role | What I Bring |
+|------|------|--------------|
+| [Avi](https://en.wikipedia.org/wiki/Avi_Flombaum) | Rails Technical Architect | Rails conventions exist for good reasons. I look for what's next while respecting what works. |
+| [Charles](https://en.wikipedia.org/wiki/Charles_Eames) | Design Systems Thinker | The details aren't details — they're the design. I ask what problem you're really solving and whether your constraints are creative gifts. |
+| [Greg](https://gregbaugues.com/) | AI Pragmatist | I've spent two years deep in AI tools. I know what they actually do well versus the hype. |
+| [Jason](https://en.wikipedia.org/wiki/Jason_Fried) | Scope Restraint Champion | I cut scope for a living. Show me a plan, and I'll show you what can wait. Sustainable pace beats heroic effort. |
+| [Marty](https://www.svpg.com/team/marty-cagan/) | Product Discovery Advocate | Have you validated this? I push teams past assumptions to evidence. Discovery before delivery. |
+| [Melissa](https://melissaperri.com/) | Build Trap Escapist | I spot build traps — when you're shipping features without outcomes. Connect your plan to what customers actually need. |
+| [Sandy](https://en.wikipedia.org/wiki/Sandy_Speicher) | Human-Centered Designer | Who's affected by this plan? I advocate for the humans at the margins — the ones most often overlooked. |
+| [Steve](https://stevekinney.net/) | Frontend Architect | I teach because clarity is everything. If your frontend can't be explained simply, it's too complex. |
+
+### Code Reviewers (Phase 4)
+
+These reviewers analyze your implementation, each bringing a specialized lens to catch issues and improve quality.
+
+| Name | Role | What I Bring |
+|------|------|--------------|
+| Abby | Review Synthesis Lead | I synthesize the team's expertise into clear priorities. Review isn't about mistakes — it's about building toward excellence. |
+| Alex | Simplicity Advocate | I find joy in deleting code. Every line removed can't break, can't confuse, doesn't need maintenance. |
+| [Corey](https://coreyhaines.com/) | Testing Coach | I'm skeptical of vanity coverage. Acceptance tests at the top, domain tests at the bottom — and be pragmatic about sad paths. |
+| Donna | Data Guardian | I don't make noise about every little thing. But when data is at risk, everyone hears me. |
+| [Florence](https://en.wikipedia.org/wiki/Florence_Griffith_Joyner) | Performance Oracle | Every millisecond matters. Your users shouldn't wait for slow software. |
+| [Jim](https://en.wikipedia.org/wiki/Jim_Weirich) | Git Historian | Version control is storytelling. Every commit is a message to your past, present, and future selves. |
+| Julik | Race Condition Hunter | Timing is everything. I hunt race conditions in JavaScript because janky UIs are the first sign of cheap software. |
+| [Kevin](https://en.wikipedia.org/wiki/Kevin_Mitnick) | Security Researcher | I spent my youth breaking into systems. Now I use that knowledge to find the holes before someone else does. |
+| [Maya](https://en.wikipedia.org/wiki/Maya_Lin) | Architecture Strategist | I see software like an architect sees buildings — structures that must bear weight and endure time. |
+| Robo | Agent Native Reviewer | I'm building for tomorrow. If an agent can't do what a user can, we're not ready for the future. |
+| [Sandi](https://sandimetz.com/) | Pattern Analyst | I see patterns where others see lines of code. I'll even pull up external resources mid-review to verify best practices. |
+
+## Learn More
+
+- [Compound engineering: how Every codes with agents](https://every.to/chain-of-thought/compound-engineering-how-every-codes-with-agents)
+- [The story behind compounding engineering](https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it)
