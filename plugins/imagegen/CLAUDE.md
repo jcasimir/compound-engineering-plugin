@@ -1,6 +1,6 @@
-# Gemini Image Generation Plugin
+# Image Generation Plugin
 
-Generate and edit images using Google's Gemini API.
+AI-powered image generation with style presets and multi-image support. Uses Google's Gemini API.
 
 ## Requirements
 
@@ -16,11 +16,11 @@ python3 -m venv ~/.gemini-venv
 
 ## Available Skills
 
-### gemini-imagegen
+### imagegen
 
 Generate images from text prompts with style presets and multi-image support.
 
-**Invoke with:** `/gemini-imagegen` or describe an image generation task
+**Invoke with:** `/imagegen` or describe an image generation task
 
 **Key Features:**
 - Text-to-image generation

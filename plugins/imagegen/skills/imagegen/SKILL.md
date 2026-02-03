@@ -1,9 +1,9 @@
 ---
-name: gemini-imagegen
-description: This skill should be used when generating and editing images using the Gemini API (Nano Banana Pro). It applies when creating images from text prompts, editing existing images, applying style transfers, generating logos with text, creating stickers, product mockups, or any image generation/manipulation task. Supports text-to-image, image editing, multi-turn refinement, and composition from multiple reference images.
+name: imagegen
+description: AI image generation from text prompts. Use for creating images, icons, mockups, illustrations, logos, and any visual content. Supports style presets (anime, photorealistic, cinematic, etc.), multiple variations, aspect ratios, and image editing. Powered by Google Gemini.
 ---
 
-# Gemini Image Generation (Nano Banana Pro)
+# Image Generation
 
 Generate and edit images using Google's Gemini API. The environment variable `GEMINI_API_KEY` must be set.
 
@@ -31,7 +31,7 @@ This skill includes ready-to-use scripts in the `scripts/` directory. **Always u
 
 First, find the scripts directory:
 ```bash
-SCRIPTS_DIR=$(dirname "$(find ~/.claude/plugins/cache -name 'generate_image.py' -path '*/gemini-imagegen/*' 2>/dev/null | head -1)")
+SCRIPTS_DIR=$(dirname "$(find ~/.claude/plugins/cache -name 'generate_image.py' -path '*/imagegen/*' 2>/dev/null | head -1)")
 ```
 
 ### Generate an Image
