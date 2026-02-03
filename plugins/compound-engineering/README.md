@@ -250,7 +250,11 @@ The `agent-browser` skill provides comprehensive documentation on usage.
 ## Installation
 
 ```bash
-claude /install https://github.com/jcasimir/compound-engineering-plugin
+# Add the marketplace
+claude /plugin marketplace add https://github.com/jcasimir/compound-engineering-plugin
+
+# Install the plugin
+claude /plugin install compound-engineering
 ```
 
 ## Known Issues

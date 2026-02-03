@@ -261,7 +261,8 @@ python -m http.server 8000
 1. Install the marketplace locally:
 
    ```bash
-   claude /install https://github.com/jcasimir/compound-engineering-plugin
+   claude /plugin marketplace add https://github.com/jcasimir/compound-engineering-plugin
+   claude /plugin install compound-engineering
    ```
 
 2. Install the plugin:

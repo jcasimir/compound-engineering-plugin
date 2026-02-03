@@ -5,7 +5,11 @@ A Claude Code plugin marketplace featuring the **Compound Engineering Plugin** â
 ## Claude Code Install
 
 ```bash
-/install https://github.com/jcasimir/compound-engineering-plugin
+# Add the marketplace
+/plugin marketplace add https://github.com/jcasimir/compound-engineering-plugin
+
+# Install the plugin
+/plugin install compound-engineering
 ```
 
 ## OpenCode + Codex (experimental) Install
