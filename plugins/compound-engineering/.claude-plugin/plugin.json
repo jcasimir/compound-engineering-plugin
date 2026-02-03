@@ -3,7 +3,7 @@
   "version": "2.34.0",
   "description": "AI-powered development tools. 36 agents, 26 commands, 15 skills, 1 MCP server for code review, research, design, and workflow automation.",
   "author": {
-    "name": "Kieran Klaassen",
+    "name": "Kieran Klaassen & Jeff Casimir",
     "email": "kieran@every.to",
     "url": "https://github.com/kieranklaassen"
   },
