@@ -1,15 +1,11 @@
-# Compound Marketplace
-
-[![Build Status](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/EveryInc/compound-engineering-plugin/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@every-env/compound-plugin)](https://www.npmjs.com/package/@every-env/compound-plugin)
+# jcasimir-plugins
 
 A Claude Code plugin marketplace featuring the **Compound Engineering Plugin** — tools that make each unit of engineering work easier than the last.
 
 ## Claude Code Install
 
 ```bash
-/plugin marketplace add https://github.com/EveryInc/compound-engineering-plugin
-/plugin install compound-engineering
+/install https://github.com/jcasimir/compound-engineering-plugin
 ```
 
 ## OpenCode + Codex (experimental) Install

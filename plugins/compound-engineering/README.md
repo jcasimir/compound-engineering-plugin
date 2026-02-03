@@ -80,38 +80,89 @@ All review agents have names and personalities to make feedback more engaging an
 
 ## Commands
 
+This plugin provides 26 commands organized into categories. Core workflow commands use `workflows:` prefix to avoid collisions with Claude Code's built-in commands.
+
 ### Workflow Commands
 
-Core workflow commands use `workflows:` prefix to avoid collisions with built-in commands:
+The primary development workflow commands that form the backbone of the compounding engineering process:
 
 | Command | Description |
 |---------|-------------|
-| `/workflows:brainstorm` | Explore requirements and approaches before planning |
-| `/workflows:plan` | Create implementation plans |
-| `/workflows:review` | Run comprehensive code reviews |
-| `/workflows:review-deep` | Two-round collaborative review where reviewers learn from each other |
-| `/workflows:work` | Execute work items systematically |
-| `/workflows:compound` | Document solved problems to compound team knowledge |
+| `/workflows:brainstorm` | Explore requirements and approaches through collaborative dialogue before planning implementation. Helps answer **WHAT** to build before `/workflows:plan` answers **HOW**. |
+| `/workflows:plan` | Transform feature descriptions, bug reports, or improvement ideas into well-structured markdown plans following project conventions. |
+| `/workflows:work` | Execute work plans efficiently while maintaining quality. Takes a plan file and systematically implements it, following existing patterns. |
+| `/workflows:review` | Perform exhaustive code reviews using multi-agent analysis, ultra-thinking, and Git worktrees for deep local inspection. |
+| `/workflows:review-deep` | Two-round collaborative review where reviewers first analyze independently, then read each other's reports and produce enriched final reviews. Use for major architectural changes or security-critical features. |
+| `/workflows:compound` | Document a recently solved problem to compound your team's knowledge. Creates structured documentation in `docs/solutions/` with YAML frontmatter for searchability. |
 
-### Utility Commands
+### Plan Enhancement Commands
+
+Commands for reviewing and deepening implementation plans:
 
 | Command | Description |
 |---------|-------------|
-| `/deepen-plan` | Enhance plans with parallel research agents for each section |
-| `/changelog` | Create engaging changelogs for recent merges |
-| `/create-agent-skill` | Create or edit Claude Code skills |
-| `/generate_command` | Generate new slash commands |
-| `/heal-skill` | Fix skill documentation issues |
-| `/plan_review` | Multi-agent plan review in parallel |
-| `/report-bug` | Report a bug in the plugin |
-| `/reproduce-bug` | Reproduce bugs using logs and console |
-| `/resolve_parallel` | Resolve TODO comments in parallel |
-| `/resolve_pr_parallel` | Resolve PR comments in parallel |
-| `/resolve_todo_parallel` | Resolve todos in parallel |
-| `/triage` | Triage and prioritize issues |
-| `/test-browser` | Run browser tests on PR-affected pages |
-| `/xcode-test` | Build and test iOS apps on simulator |
-| `/feature-video` | Record video walkthroughs and add to PR description |
+| `/deepen-plan` | Enhance a plan with parallel research agents for each section. Each major element gets dedicated research for best practices, performance optimizations, and real-world implementation examples. |
+| `/plan_review` | Have five specialized plan reviewers (Jason Fried, Charles Eames, Marty Cagan, Melissa Perri, Sandy Speicher) analyze a plan in parallel. |
+| `/plan_review-deep` | Two-round plan review where reviewers first analyze independently, then read each other's reports and produce enriched final reviews informed by diverse perspectives. |
+
+### Parallel Resolution Commands
+
+Commands that leverage parallel processing to resolve multiple items simultaneously:
+
+| Command | Description |
+|---------|-------------|
+| `/resolve_parallel` | Find all TODO comments in the codebase, analyze dependencies, and resolve them using parallel sub-agents. Outputs a mermaid flow diagram showing execution order. |
+| `/resolve_pr_parallel` | Get all unresolved PR comments and resolve them in parallel. Automatically detects current branch and associated PR context. |
+| `/resolve_todo_parallel` | Resolve all pending CLI todos from the `todos/*.md` directory using parallel processing. Analyzes dependencies to determine optimal execution order. |
+
+### Testing & QA Commands
+
+Commands for testing, bug reproduction, and quality assurance:
+
+| Command | Description |
+|---------|-------------|
+| `/test-browser` | Run end-to-end browser tests on pages affected by a PR or branch using agent-browser CLI. Supports PR number, branch name, or 'current' for current branch. |
+| `/reproduce-bug` | Investigate a GitHub issue by reading the description, running parallel log investigation agents (Rails console, Appsignal), and analyzing potential failure points. |
+| `/xcode-test` | Build and test iOS apps on simulator using XcodeBuildMCP. Captures screenshots, logs, and verifies app behavior. |
+
+### Documentation Commands
+
+Commands for generating and maintaining documentation:
+
+| Command | Description |
+|---------|-------------|
+| `/changelog` | Create engaging, witty changelogs for recent merges to main branch. Supports daily (24h) or weekly (7 days) summaries with developer credits. |
+| `/release-docs` | Regenerate the documentation site to match current plugin components. Updates stats, reference pages, and validates counts. |
+| `/deploy-docs` | Validate the documentation site and prepare it for GitHub Pages deployment. Runs component counts and JSON validation. |
+| `/feature-video` | Record a video walkthrough demonstrating a feature using agent-browser, upload it, and embed it in the PR description. |
+
+### Skill & Command Management
+
+Commands for creating and fixing plugin components:
+
+| Command | Description |
+|---------|-------------|
+| `/create-agent-skill` | Create or edit Claude Code skills with expert guidance on structure, frontmatter, and best practices. |
+| `/generate_command` | Create a new custom slash command in `.claude/commands/` following conventions. Understands file operations, search, and editing capabilities. |
+| `/heal-skill` | Fix incorrect SKILL.md files when a skill has wrong instructions or outdated API references. Analyzes conversation context to detect issues. |
+
+### Issue Management Commands
+
+Commands for triaging and reporting issues:
+
+| Command | Description |
+|---------|-------------|
+| `/triage` | Go through findings one by one and decide whether to add each to the CLI todo system. For processing code review findings, security audits, or performance analysis. Does NOT write code—triage only. |
+| `/report-bug` | Report a bug in the compound-engineering plugin. Gathers structured information and creates a GitHub issue for the maintainer. |
+
+### Automation Commands
+
+Commands for full autonomous workflows:
+
+| Command | Description |
+|---------|-------------|
+| `/lfg` | Full autonomous engineering workflow. Runs plan → deepen-plan → work → review → resolve todos → test-browser → feature-video in sequence. |
+| `/agent-native-audit` | Comprehensive review against agent-native architecture principles (Action Parity, Tools as Primitives, Context Injection, etc.) with scored report. |
 
 ## Skills
 
@@ -199,7 +250,7 @@ The `agent-browser` skill provides comprehensive documentation on usage.
 ## Installation
 
 ```bash
-claude /plugin install compound-engineering
+claude /install https://github.com/jcasimir/compound-engineering-plugin
 ```
 
 ## Known Issues

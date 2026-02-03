@@ -94,19 +94,13 @@
             <li>Node.js 18+ (for MCP servers)</li>
           </ul>
 
-          <h3>Step 1: Add the Marketplace</h3>
-          <p>Think of the marketplace as an app store. You're adding it to Claude Code's list of places to look for plugins:</p>
+          <h3>Step 1: Install the Plugin</h3>
+          <p>Install directly from GitHub:</p>
           <div class="card-code-block">
-            <pre><code>claude /plugin marketplace add https://github.com/EveryInc/compound-engineering-plugin</code></pre>
+            <pre><code>claude /install https://github.com/jcasimir/compound-engineering-plugin</code></pre>
           </div>
 
-          <h3>Step 2: Install the Plugin</h3>
-          <p>Now grab the plugin itself:</p>
-          <div class="card-code-block">
-            <pre><code>claude /plugin install compound-engineering</code></pre>
-          </div>
-
-          <h3>Step 3: Verify Installation</h3>
+          <h3>Step 2: Verify Installation</h3>
           <p>Check that it worked:</p>
           <div class="card-code-block">
             <pre><code>claude /plugin list</code></pre>
