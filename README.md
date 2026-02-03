@@ -48,7 +48,7 @@ Erin orchestrates these phases (or invoke them directly):
 
 Each cycle compounds: plans inform future plans, reviews catch more issues, patterns get documented.
 
-## Profiles
+## Agents by Phase
 
 ### Project Manager
 
@@ -56,13 +56,28 @@ Each cycle compounds: plans inform future plans, reviews catch more issues, patt
 |------|------|--------------|
 | Erin | Engineering PM | I orchestrate the full workflow from brainstorm to compound. Steps happen in the right order, nothing gets missed, and learnings compound. |
 
-### Reviewers
+### Phase 0: Brainstorm
 
-Two teams of reviewers guide your work through planning and implementation.
+Research agents that help explore ideas before planning.
 
-### Plan Reviewers (Phase 2)
+| Agent | Purpose |
+|-------|---------|
+| repo-research | Analyze existing codebase patterns and conventions |
+| spec-flow | Analyze specifications for user flows and edge cases |
 
-These reviewers evaluate your plans before you write code, helping you think through scope, strategy, and approach.
+### Phase 1: Plan
+
+Research agents that inform implementation planning.
+
+| Agent | Purpose |
+|-------|---------|
+| best-practices-research | Gather external best practices and documentation |
+| framework-docs-research | Research framework/library documentation |
+| learnings-research | Search institutional learnings from past solutions |
+
+### Phase 2: Plan Review
+
+Reviewers who evaluate your plans before you write code.
 
 | Name | Role | What I Bring |
 |------|------|--------------|
@@ -75,23 +90,55 @@ These reviewers evaluate your plans before you write code, helping you think thr
 | [Sandy](https://en.wikipedia.org/wiki/Sandy_Speicher) | Human-Centered Designer | Who's affected by this plan? I advocate for the humans at the margins — the ones most often overlooked. |
 | [Steve](https://stevekinney.net/) | Frontend Architect | I teach because clarity is everything. If your frontend can't be explained simply, it's too complex. |
 
-### Code Reviewers (Phase 4)
+### Phase 3: Code
 
-These reviewers analyze your implementation, each bringing a specialized lens to catch issues and improve quality.
+Agents that assist during implementation.
+
+| Agent | Purpose |
+|-------|---------|
+| bug-reproduction | Reproduce and validate reported bugs |
+| design-implementation | Verify implementation matches design specs |
+| design-iterator | Iteratively refine designs through screenshots and analysis |
+| figma-design-sync | Sync implementation with Figma designs |
+| lint | Run linting and code quality checks |
+
+### Phase 4: Code Review
+
+Reviewers who analyze your implementation before merging.
 
 | Name | Role | What I Bring |
 |------|------|--------------|
 | Abby | Review Synthesis Lead | I synthesize the team's expertise into clear priorities. Review isn't about mistakes — it's about building toward excellence. |
 | Alex | Simplicity Advocate | I find joy in deleting code. Every line removed can't break, can't confuse, doesn't need maintenance. |
 | [Corey](https://coreyhaines.com/) | Testing Coach | I'm skeptical of vanity coverage. Acceptance tests at the top, domain tests at the bottom — and be pragmatic about sad paths. |
+| Dana | Data Migration Expert | I validate ID mappings, check for swapped values, and verify rollback safety. |
 | Donna | Data Guardian | I don't make noise about every little thing. But when data is at risk, everyone hears me. |
 | [Florence](https://en.wikipedia.org/wiki/Florence_Griffith_Joyner) | Performance Oracle | Every millisecond matters. Your users shouldn't wait for slow software. |
 | [Jim](https://en.wikipedia.org/wiki/Jim_Weirich) | Git Historian | Version control is storytelling. Every commit is a message to your past, present, and future selves. |
 | Julik | Race Condition Hunter | Timing is everything. I hunt race conditions in JavaScript because janky UIs are the first sign of cheap software. |
 | [Kevin](https://en.wikipedia.org/wiki/Kevin_Mitnick) | Security Researcher | I spent my youth breaking into systems. Now I use that knowledge to find the holes before someone else does. |
 | [Maya](https://en.wikipedia.org/wiki/Maya_Lin) | Architecture Strategist | I see software like an architect sees buildings — structures that must bear weight and endure time. |
+| Nathan | Deployment Verifier | I create Go/No-Go checklists with SQL verification queries and rollback procedures. |
 | Robo | Agent Native Reviewer | I'm building for tomorrow. If an agent can't do what a user can, we're not ready for the future. |
 | [Sandi](https://sandimetz.com/) | Pattern Analyst | I see patterns where others see lines of code. I'll even pull up external resources mid-review to verify best practices. |
+
+### Phase 5: Compound
+
+Agents that help capture learnings and documentation.
+
+| Agent | Purpose |
+|-------|---------|
+| ankane-readme | Write READMEs following Ankane's concise style |
+| every-style-editor | Edit content to follow Every's style guide |
+
+### Utilities
+
+On-demand agents available anytime.
+
+| Agent | Purpose |
+|-------|---------|
+| git-history-analyzer | Analyze git history for context and patterns |
+| pr-comment-resolver | Address PR review comments systematically |
 
 ## Learn More
 
