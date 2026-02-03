@@ -39,6 +39,7 @@ Erin orchestrates these phases (or invoke them directly):
 | # | Command | Purpose |
 |---|---------|---------|
 | — | `/workflow:full` | **Start here.** Project manager for the full workflow |
+| — | `/workflow:spike` | Erin runs autonomously — no feedback until done |
 | 0 | `/workflow:0-brainstorm` | Explore requirements before planning |
 | 1 | `/workflow:1-plan` | Turn feature ideas into detailed implementation plans |
 | 2 | `/workflow:2-plan-review` | Multi-agent plan review before coding |
