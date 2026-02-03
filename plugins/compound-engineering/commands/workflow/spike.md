@@ -56,14 +56,16 @@ Think of it this way: the user gave you the goal and stepped away. All the other
 
 ## Execution
 
-Run through all phases:
+**You MUST invoke each workflow phase using the Skill tool.** Don't do the work yourself — use the workflow commands, which invoke the specialized agents and reviewers.
 
-1. **Brainstorm** (brief) — Quick exploration, pick an approach, move on
-2. **Plan** (minimal) — Create a focused plan, don't over-engineer
-3. **Plan Review** (fast) — Run reviewers, address showstoppers only
-4. **Code** — Build it
-5. **Code Review** (fast) — Run reviewers, fix critical issues only
-6. **Compound** — Document what you learned
+1. **Brainstorm** — Invoke `/workflow:0-brainstorm` with the goal. When it asks for user input, you decide.
+2. **Plan** — Invoke `/workflow:1-plan` with what you learned. When it asks for input, you decide.
+3. **Plan Review** — Invoke `/workflow:2-plan-review` with the plan path. Take reviewer findings, address critical ones, note the rest.
+4. **Code** — Invoke `/workflow:3-code` with the plan. Build it.
+5. **Code Review** — Invoke `/workflow:4-code-review`. Take reviewer findings, fix critical issues only.
+6. **Compound** — Invoke `/workflow:5-compound`. Document what you learned.
+
+**Critical:** Each phase invokes specialized agents and reviewers. That's the whole point of the workflow. Don't bypass them by doing everything inline.
 
 ## Output
 
