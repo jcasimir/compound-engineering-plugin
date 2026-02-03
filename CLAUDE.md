@@ -4,7 +4,7 @@
 
 ```
 agents/       # Flat folder, agents prefixed by workflow phase or "other-"
-commands/     # Slash commands (workflows/ for numbered sequence)
+commands/     # Slash commands (workflow/ for numbered sequence)
 skills/       # Skills with SKILL.md files
 ```
 
@@ -21,7 +21,7 @@ Agents are named by workflow phase prefix:
 
 ## Getting Started
 
-**Start with Erin:** `/erin [what you want to build]`
+**Start with Erin:** `/workflow:all [what you want to build]`
 
 Erin is the project manager who orchestrates the entire workflow. She'll guide you through the right steps based on your project's scope.
 
@@ -30,7 +30,7 @@ Erin is the project manager who orchestrates the entire workflow. She'll guide y
 Erin manages these phases (or invoke directly):
 
 ```
-/erin → 0-brainstorm → 1-plan → 2-plan-review → 3-code → 4-code-review → 5-compound
+/workflow:all → 0-brainstorm → 1-plan → 2-plan-review → 3-code → 4-code-review → 5-compound
 ```
 
 ## Adding Components
@@ -55,7 +55,7 @@ If adding a **reviewer**, also add a row to README.md Profiles table:
 
 ### Commands
 
-Add `.md` file to `commands/` (or `commands/workflows/` for workflow commands):
+Add `.md` file to `commands/` (or `commands/workflow/` for workflow commands):
 
 ```yaml
 ---

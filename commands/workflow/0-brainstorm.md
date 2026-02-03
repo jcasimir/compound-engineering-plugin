@@ -1,5 +1,5 @@
 ---
-name: workflows:0-brainstorm
+name: workflow:0-brainstorm
 description: Explore requirements and approaches through collaborative dialogue before planning implementation
 argument-hint: "[feature idea or problem to explore]"
 ---
@@ -8,7 +8,7 @@ argument-hint: "[feature idea or problem to explore]"
 
 **Note: The current year is 2026.** Use this when dating brainstorm documents.
 
-Brainstorming helps answer **WHAT** to build through collaborative dialogue. It precedes `/workflows:1-plan`, which answers **HOW** to build it.
+Brainstorming helps answer **WHAT** to build through collaborative dialogue. It precedes `/workflow:1-plan`, which answers **HOW** to build it.
 
 **Process knowledge:** Load the `brainstorming` skill for detailed question techniques, approach exploration patterns, and YAGNI principles.
 
@@ -33,7 +33,7 @@ Evaluate whether brainstorming is needed based on the feature description.
 - Constrained, well-defined scope
 
 **If requirements are already clear:**
-Use **AskUserQuestion tool** to suggest: "Your requirements seem detailed enough to proceed directly to planning. Should I run `/workflows:1-plan` instead, or would you like to explore the idea further?"
+Use **AskUserQuestion tool** to suggest: "Your requirements seem detailed enough to proceed directly to planning. Should I run `/workflow:1-plan` instead, or would you like to explore the idea further?"
 
 ### Phase 1: Understand the Idea
 
@@ -85,7 +85,7 @@ Use **AskUserQuestion tool** to present next steps:
 **Question:** "Brainstorm captured. What would you like to do next?"
 
 **Options:**
-1. **Proceed to planning** - Run `/workflows:1-plan` (will auto-detect this brainstorm)
+1. **Proceed to planning** - Run `/workflow:1-plan` (will auto-detect this brainstorm)
 2. **Refine design further** - Continue exploring
 3. **Done for now** - Return later
 
@@ -102,7 +102,7 @@ Key decisions:
 - [Decision 1]
 - [Decision 2]
 
-Next: Run `/workflows:1-plan` when ready to implement.
+Next: Run `/workflow:1-plan` when ready to implement.
 ```
 
 ## Important Guidelines

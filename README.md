@@ -23,7 +23,7 @@ Compound engineering inverts this. 80% is in planning and review, 20% is in exec
 ## Quick Start
 
 ```bash
-/erin I want to build [your feature]
+/workflow:all I want to build [your feature]
 ```
 
 **Erin** is your project manager. She guides you through the entire workflow, ensuring steps happen in the right order and nothing gets missed.
@@ -33,18 +33,18 @@ Compound engineering inverts this. 80% is in planning and review, 20% is in exec
 Erin orchestrates these phases (or invoke them directly):
 
 ```
-/erin → Brainstorm → Plan → Plan Review → Code → Code Review → Compound → Repeat
+/workflow:all → Brainstorm → Plan → Plan Review → Code → Code Review → Compound → Repeat
 ```
 
 | # | Command | Purpose |
 |---|---------|---------|
-| — | `/erin` | **Start here.** Project manager for the full workflow |
-| 0 | `/workflows:0-brainstorm` | Explore requirements before planning |
-| 1 | `/workflows:1-plan` | Turn feature ideas into detailed implementation plans |
-| 2 | `/workflows:2-plan-review` | Multi-agent plan review before coding |
-| 3 | `/workflows:3-code` | Execute plans with worktrees and task tracking |
-| 4 | `/workflows:4-code-review` | Multi-agent code review before merging |
-| 5 | `/workflows:5-compound` | Document learnings to make future work easier |
+| — | `/workflow:all` | **Start here.** Project manager for the full workflow |
+| 0 | `/workflow:0-brainstorm` | Explore requirements before planning |
+| 1 | `/workflow:1-plan` | Turn feature ideas into detailed implementation plans |
+| 2 | `/workflow:2-plan-review` | Multi-agent plan review before coding |
+| 3 | `/workflow:3-code` | Execute plans with worktrees and task tracking |
+| 4 | `/workflow:4-code-review` | Multi-agent code review before merging |
+| 5 | `/workflow:5-compound` | Document learnings to make future work easier |
 
 Each cycle compounds: plans inform future plans, reviews catch more issues, patterns get documented.
 

@@ -236,8 +236,8 @@ Structure your findings as:
 ## Integration Points
 
 This agent is designed to be invoked by:
-- `/workflows:1-plan` - To inform planning with institutional knowledge
-- `/workflows:1-plan:deep` - To add depth with relevant learnings
+- `/workflow:1-plan` - To inform planning with institutional knowledge
+- `/workflow:1-plan:deep` - To add depth with relevant learnings
 - Manual invocation before starting work on a feature
 
 The goal is to surface relevant learnings in under 30 seconds for a typical solutions directory, enabling fast knowledge retrieval during planning phases.

@@ -49,37 +49,37 @@ When a user comes to you with an idea, feature, or improvement:
 
 #### Phase 0: Brainstorm
 **Purpose:** Explore WHAT to build
-**You invoke:** `/workflows:0-brainstorm [idea]`
+**You invoke:** `/workflow:0-brainstorm [idea]`
 **Exit criteria:** Clear understanding of what we're building and why
 **Your role:** Ensure the brainstorm produces actionable decisions, not endless discussion
 
 #### Phase 1: Plan
 **Purpose:** Define HOW to build it
-**You invoke:** `/workflows:1-plan [feature]`
+**You invoke:** `/workflow:1-plan [feature]`
 **Exit criteria:** A plan document in `docs/plans/` with clear acceptance criteria
 **Your role:** Ensure the plan is specific enough to execute but not over-engineered
 
 #### Phase 2: Plan Review
 **Purpose:** Validate the plan before coding
-**You invoke:** `/workflows:2-plan-review [plan path]`
+**You invoke:** `/workflow:2-plan-review [plan path]`
 **Exit criteria:** Plan approved or revised based on reviewer feedback
 **Your role:** Facilitate the review, help prioritize feedback, decide when plan is ready
 
 #### Phase 3: Code
 **Purpose:** Build the feature
-**You invoke:** `/workflows:3-code [plan path]`
+**You invoke:** `/workflow:3-code [plan path]`
 **Exit criteria:** Feature implemented and working locally
 **Your role:** Keep implementation focused on the plan, avoid scope creep
 
 #### Phase 4: Code Review
 **Purpose:** Validate the implementation
-**You invoke:** `/workflows:4-code-review [PR or branch]`
+**You invoke:** `/workflow:4-code-review [PR or branch]`
 **Exit criteria:** Code approved or issues addressed
 **Your role:** Help triage findings, ensure critical issues are fixed before merge
 
 #### Phase 5: Compound
 **Purpose:** Capture learnings for future work
-**You invoke:** `/workflows:5-compound`
+**You invoke:** `/workflow:5-compound`
 **Exit criteria:** Learnings documented in `docs/solutions/`
 **Your role:** Ensure we don't skip this step — it's what makes engineering compound
 

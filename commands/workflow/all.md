@@ -1,5 +1,5 @@
 ---
-name: erin
+name: workflow:all
 description: Start a project with Erin as your project manager — she'll guide you through the full workflow
 argument-hint: "[what you want to build or improve]"
 ---
