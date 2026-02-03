@@ -6,7 +6,7 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 
 | Component | Count |
 |-----------|-------|
-| Agents | 32 |
+| Agents | 36 |
 | Commands | 25 |
 | Skills | 15 |
 | MCP Servers | 1 |
@@ -15,7 +15,7 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 
 Agents are organized into categories for easier discovery.
 
-### Review (18)
+### Review (22)
 
 All review agents have names and personalities to make feedback more engaging and memorable.
 
@@ -29,13 +29,17 @@ All review agents have names and personalities to make feedback more engaging an
 | `data-integrity-guardian` | Donna | Quiet guardian who speaks up when data is at risk |
 | `data-migration-expert` | Dana | Reserved specialist, meticulous about migration safety |
 | `deployment-verification-agent` | Nathan | Trusted ops person who makes deploys boring and safe |
-| `dhh-rails-reviewer` | DHH | Rails review from David Heinemeier Hansson's perspective |
+| `charles-eames-plan-reviewer` | Charles | Legendary designer, systems thinker, constraints as creative gifts |
+| `jason-fried-plan-reviewer` | Jason | 37signals founder, champion of scope restraint and sustainability |
+| `marty-cagan-plan-reviewer` | Marty | SVPG founder, discovery advocate, product risk assessor |
+| `melissa-perri-plan-reviewer` | Melissa | Escapes build traps, outcomes over output champion |
+| `sandy-speicher-plan-reviewer` | Sandy | Former IDEO CEO, human-centered design and equity advocate |
 | `erin-process-reviewer` | Erin | Process guardian, ensures we learn from each cycle |
 | `jim-git-reviewer` | Jim | Git as storytelling (tribute to Jim Weirich) |
 | `julik-frontend-races-reviewer` | Julik | Spots race conditions in JavaScript and Stimulus code |
-| `kieran-rails-reviewer` | Kieran | Rails code review with strict conventions |
-| `kieran-python-reviewer` | Kieran | Python code review with strict conventions |
-| `kieran-typescript-reviewer` | Kieran | TypeScript code review with strict conventions |
+| `avi-rails-architect` | Avi | Rails technical architect, always looking for what's next |
+| `greg-ai-reviewer` | Greg | AI pragmatist, reviews AI usage in dev and products |
+| `steve-frontend-architect` | Steve | Frontend architect, simplifies complex UIs, performance-focused |
 | `pattern-recognition-specialist` | Sandi | Deep thinker who researches patterns and best practices |
 | `performance-oracle` | Florence | Flo-Jo believes in raw speed — every millisecond matters |
 | `security-sentinel` | Kevin | Reformed black hat who thinks like an attacker |

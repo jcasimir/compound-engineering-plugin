@@ -5,6 +5,51 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.34.0] - 2026-02-02
+
+### Added
+
+- **5 new plan review agents** with diverse perspectives for strategic/product feedback:
+  - `jason-fried-plan-reviewer` - 37signals founder on scope, sustainability, and shipping smaller
+  - `charles-eames-plan-reviewer` - Legendary designer on problem definition, constraints, and systems thinking
+  - `marty-cagan-plan-reviewer` - SVPG founder on discovery, validation, and the four product risks
+  - `melissa-perri-plan-reviewer` - Author of "Escaping the Build Trap" on outcomes over output
+  - `sandy-speicher-plan-reviewer` - Former IDEO CEO on human-centered design, equity, and systemic impact
+  - All plan reviewers include **Principles sections** with direct quotes from interviews
+
+- **`avi-rails-architect`** - Rails technical architect (inspired by Avi Flombaum)
+  - Research current best practices before recommending
+  - Focus on "what's next" while staying grounded in what works
+
+- **`steve-frontend-architect`** - Frontend architect (inspired by Steve Kinney)
+  - Former head of frontend at Temporal, Frontend Masters instructor
+  - Philosophy: "Making complex things simple enough that people actually want to use them"
+  - Performance-focused: "Doing less stuff takes less time"
+  - Teacher's lens: if you can't explain it simply, it's too complex
+
+- **`greg-ai-reviewer`** - AI pragmatist (inspired by Greg Baugues)
+  - Former Twilio DevRel director, founder of haihai.ai
+  - Reviews how AI is used in development AND integrated into products
+  - Philosophy: "AI won't take your job, but someone using AI will"
+  - Warns against "autonomous agent" hype: "Tools that promise full automation are grossly underperforming"
+  - Security focus: prompt injection, data exposure risks
+
+### Removed
+
+- **`dhh-rails-reviewer` agent** - Replaced with more diverse plan review perspectives
+- **`kieran-rails-reviewer`, `kieran-python-reviewer`, `kieran-typescript-reviewer`** - Transformed into Avi technical architects with web research capabilities
+
+### Changed
+
+- **`/plan_review` command** - Now uses the 5 new diverse plan reviewers instead of code-focused reviewers
+- **Plan reviewers now have authentic voices** - Each reviewer's principles are sourced from actual interviews and quotes
+
+### Summary
+
+- 36 agents, 25 commands, 15 skills, 1 MCP server
+
+---
+
 ## [2.33.0] - 2026-02-02
 
 ### Added
