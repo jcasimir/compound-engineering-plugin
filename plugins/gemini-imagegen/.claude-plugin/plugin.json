@@ -1,0 +1,21 @@
+{
+  "name": "gemini-imagegen",
+  "version": "1.0.0",
+  "description": "Generate and edit images using Google's Gemini API. Supports text-to-image, image editing, style presets, and multi-image generation.",
+  "author": {
+    "name": "Jeff Casimir",
+    "email": "jeff@casimircreative.com",
+    "url": "https://github.com/jcasimir"
+  },
+  "homepage": "https://github.com/jcasimir/compound-engineering-plugin",
+  "repository": "https://github.com/jcasimir/compound-engineering-plugin",
+  "license": "MIT",
+  "keywords": [
+    "image-generation",
+    "gemini",
+    "ai-images",
+    "text-to-image",
+    "image-editing",
+    "style-presets"
+  ]
+}
