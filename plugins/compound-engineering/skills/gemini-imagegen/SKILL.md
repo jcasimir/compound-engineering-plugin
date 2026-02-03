@@ -44,6 +44,9 @@ Options:
 - `--model` / `-m`: Model to use (`gemini-2.5-flash-image` default, or `gemini-3-pro-image-preview`)
 - `--aspect` / `-a`: Aspect ratio (`1:1`, `16:9`, `9:16`, etc.)
 - `--size` / `-s`: Resolution (`1K`, `2K`, `4K`)
+- `--count` / `-c`: Generate multiple variations (1-4)
+- `--style`: Apply a style preset (use `--list-styles` to see options)
+- `--list-styles`: Show all available style presets
 
 Example with options:
 ```bash
@@ -53,6 +56,45 @@ Example with options:
   --aspect 16:9 \
   --size 2K
 ```
+
+### Generate Multiple Variations
+
+```bash
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/generate_image.py" \
+  "A logo for a coffee shop" \
+  logo.jpg \
+  --count 4
+# Outputs: logo_1.jpg, logo_2.jpg, logo_3.jpg, logo_4.jpg
+```
+
+### Apply Style Presets
+
+Style presets append curated prompt suffixes for consistent aesthetics:
+
+```bash
+# List all available styles
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/generate_image.py" --list-styles
+
+# Generate with a style
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/generate_image.py" \
+  "A city street" \
+  street.jpg \
+  --style cinematic
+
+# Combine style with multiple outputs
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/generate_image.py" \
+  "A soccer player" \
+  player.jpg \
+  --style anime \
+  --count 3
+```
+
+**Available Style Categories:**
+- **Photography:** `photorealistic`, `portrait`, `product`, `street`, `cinematic`, `aerial`
+- **Art:** `anime`, `watercolor`, `oil-painting`, `sketch`, `comic`, `pixel-art`, `3d-render`
+- **Era/Aesthetic:** `80s-retro`, `90s-vintage`, `minimalist`, `maximalist`, `vaporwave`
+- **Technical:** `blueprint`, `infographic`, `ui-mockup`
+- **Mood:** `dark-moody`, `bright-airy`, `golden-hour`
 
 ### Edit an Existing Image
 
