@@ -63,11 +63,11 @@ This command launches multiple specialized subagents IN PARALLEL to maximize eff
 
 ### 7. **Optional: Specialized Agent Invocation** (Post-Documentation)
    Based on problem type detected, automatically invoke applicable agents:
-   - **performance_issue** → `performance-oracle`
-   - **security_issue** → `security-sentinel`
-   - **database_issue** → `data-integrity-guardian`
-   - **test_failure** → `cora-test-reviewer`
-   - Any code-heavy issue → `kieran-rails-reviewer` + `code-simplicity-reviewer`
+   - **performance_issue** → `4-code-review-performance-oracle`
+   - **security_issue** → `4-code-review-security-sentinel`
+   - **database_issue** → `4-code-review-data-integrity`
+   - **test_failure** → `4-code-review-corey-test`
+   - Any code-heavy issue → `4-code-review-code-simplicity`
 
 ## What It Captures
 
@@ -124,10 +124,9 @@ Primary Subagent Results:
   ✓ Documentation Writer: Created complete markdown
 
 Specialized Agent Reviews (Auto-Triggered):
-  ✓ performance-oracle: Validated query optimization approach
-  ✓ kieran-rails-reviewer: Code examples meet Rails standards
-  ✓ code-simplicity-reviewer: Solution is appropriately minimal
-  ✓ every-style-editor: Documentation style verified
+  ✓ 4-code-review-performance-oracle: Validated query optimization approach
+  ✓ 4-code-review-code-simplicity: Solution is appropriately minimal
+  ✓ 5-compound-every-style-editor: Documentation style verified
 
 File created:
 - docs/solutions/performance-issues/n-plus-one-brief-generation.md
@@ -177,20 +176,19 @@ Build → Test → Find Issue → Research → Improve → Document → Validate
 Based on problem type, these agents can enhance documentation:
 
 ### Code Quality & Review
-- **kieran-rails-reviewer**: Reviews code examples for Rails best practices
-- **code-simplicity-reviewer**: Ensures solution code is minimal and clear
-- **pattern-recognition-specialist**: Identifies anti-patterns or repeating issues
+- **4-code-review-code-simplicity**: Ensures solution code is minimal and clear
+- **4-code-review-pattern-recognition**: Identifies anti-patterns or repeating issues
 
 ### Specific Domain Experts
-- **performance-oracle**: Analyzes performance_issue category solutions
-- **security-sentinel**: Reviews security_issue solutions for vulnerabilities
-- **cora-test-reviewer**: Creates test cases for prevention strategies
-- **data-integrity-guardian**: Reviews database_issue migrations and queries
+- **4-code-review-performance-oracle**: Analyzes performance_issue category solutions
+- **4-code-review-security-sentinel**: Reviews security_issue solutions for vulnerabilities
+- **4-code-review-corey-test**: Creates test cases for prevention strategies
+- **4-code-review-data-integrity**: Reviews database_issue migrations and queries
 
 ### Enhancement & Documentation
-- **best-practices-researcher**: Enriches solution with industry best practices
-- **every-style-editor**: Reviews documentation style and clarity
-- **framework-docs-researcher**: Links to Rails/gem documentation references
+- **1-plan-best-practices-research**: Enriches solution with industry best practices
+- **5-compound-every-style-editor**: Reviews documentation style and clarity
+- **1-plan-framework-docs-research**: Links to Rails/gem documentation references
 
 ### When to Invoke
 - **Auto-triggered** (optional): Agents can run post-documentation for enhancement

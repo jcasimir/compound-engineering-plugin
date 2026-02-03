@@ -74,8 +74,8 @@ First, I need to understand the project's conventions, existing patterns, and an
 
 Run these agents **in parallel** to gather local context:
 
-- Task repo-research-analyst(feature_description)
-- Task learnings-researcher(feature_description)
+- Task 0-brainstorm-repo-research(feature_description)
+- Task 1-plan-learnings-research(feature_description)
 
 **What to look for:**
 - **Repo research:** existing patterns, CLAUDE.md guidance, technology familiarity, pattern consistency
@@ -105,8 +105,8 @@ Examples:
 
 Run these agents in parallel:
 
-- Task best-practices-researcher(feature_description)
-- Task framework-docs-researcher(feature_description)
+- Task 1-plan-best-practices-research(feature_description)
+- Task 1-plan-framework-docs-research(feature_description)
 
 ### 1.6. Consolidate Research
 
@@ -150,7 +150,7 @@ Think like a product manager - what would make this issue clear and actionable? 
 
 After planning the issue structure, run SpecFlow Analyzer to validate and refine the feature specification:
 
-- Task spec-flow-analyzer(feature_description, research_findings)
+- Task 0-brainstorm-spec-flow(feature_description, research_findings)
 
 **SpecFlow Analyzer Output:**
 

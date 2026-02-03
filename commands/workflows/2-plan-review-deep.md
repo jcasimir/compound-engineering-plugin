@@ -95,16 +95,16 @@ Launch all five plan reviewers in parallel. Each reviewer analyzes the plan inde
 # Launch all plan reviewers in parallel
 
 # Product & Strategy
-Task jason-fried-plan-reviewer(Plan context) → round1_jason.md
-Task charles-eames-plan-reviewer(Plan context) → round1_charles.md
-Task marty-cagan-plan-reviewer(Plan context) → round1_marty.md
-Task melissa-perri-plan-reviewer(Plan context) → round1_melissa.md
-Task sandy-speicher-plan-reviewer(Plan context) → round1_sandy.md
+Task 2-plan-review-jason-fried(Plan context) → round1_jason.md
+Task 2-plan-review-charles-eames(Plan context) → round1_charles.md
+Task 2-plan-review-marty-cagan(Plan context) → round1_marty.md
+Task 2-plan-review-melissa-perri(Plan context) → round1_melissa.md
+Task 2-plan-review-sandy-speicher(Plan context) → round1_sandy.md
 
 # Technical Architecture
-Task steve-frontend-architect(Plan context) → round1_steve.md
-Task avi-rails-architect(Plan context) → round1_avi.md
-Task greg-ai-reviewer(Plan context) → round1_greg.md
+Task 2-plan-review-steve-frontend(Plan context) → round1_steve.md
+Task 2-plan-review-avi-rails(Plan context) → round1_avi.md
+Task 2-plan-review-greg-ai(Plan context) → round1_greg.md
 ```
 
 ### Collect Round 1 Reports
@@ -124,7 +124,7 @@ Erin reviews all Round 1 reports and recommends which reviewers should participa
 ### Erin's Triage Task
 
 ```
-Task erin-process-reviewer("Review these Round 1 plan reviews and recommend which reviewers should participate in Round 2.
+Task 5-compound-erin-process("Review these Round 1 plan reviews and recommend which reviewers should participate in Round 2.
 
 **Your Role:** You're orchestrating a collaborative review process. Round 2 lets reviewers build on each other's insights.
 
@@ -259,7 +259,7 @@ Erin receives all Round 2 reports (plus Round 1 reports from reviewers who skipp
 ### Erin's Final Synthesis
 
 ```
-Task erin-process-reviewer("Synthesize these enriched plan review reports into a final summary for the user.
+Task 5-compound-erin-process("Synthesize these enriched plan review reports into a final summary for the user.
 
 **Context:** This plan went through a two-round collaborative review. In Round 2, reviewers read each other's reports and rewrote their own with cross-pollinated insights. They've explicitly referenced each other's perspectives.
 

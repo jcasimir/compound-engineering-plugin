@@ -54,31 +54,27 @@ Produces final prioritized summary
 
 ### Step 2: Discover Available Reviewers
 
-List all review agents from `agents/review/` directory. Exclude:
-- `abby-review-synthesis` (she's the PM, not a reviewer)
+List all review agents matching `4-code-review-*.md` in `agents/` directory. Exclude:
+- `4-code-review-abby-synthesis` (she's the PM, not a reviewer)
 
 The reviewers available for this deep review:
 
 **Universal Reviewers:**
-- Robo (`agent-native-reviewer`) — Agent-native architecture
-- Maya (`architecture-strategist`) — Systems and structure
-- Alex (`code-simplicity-reviewer`) — Simplicity and YAGNI
-- Corey (`corey-test-reviewer`) — Test quality
-- Donna (`data-integrity-guardian`) — Data integrity
-- Dana (`data-migration-expert`) — Migration safety (if migrations present)
-- Nathan (`deployment-verification-agent`) — Deployment readiness (if risky changes)
-- Erin (`erin-process-reviewer`) — Process adherence
-- Jim (`jim-git-reviewer`) — Git history and storytelling
-- Sandi (`pattern-recognition-specialist`) — Patterns and research
-- Florence (`performance-oracle`) — Performance and scale
-- Kevin (`security-sentinel`) — Security vulnerabilities
+- Robo (`4-code-review-agent-native`) — Agent-native architecture
+- Maya (`4-code-review-architecture`) — Systems and structure
+- Alex (`4-code-review-code-simplicity`) — Simplicity and YAGNI
+- Corey (`4-code-review-corey-test`) — Test quality
+- Donna (`4-code-review-data-integrity`) — Data integrity
+- Dana (`4-code-review-data-migration`) — Migration safety (if migrations present)
+- Nathan (`4-code-review-deployment-verification`) — Deployment readiness (if risky changes)
+- Erin (`5-compound-erin-process`) — Process adherence
+- Jim (`4-code-review-jim-git`) — Git history and storytelling
+- Sandi (`4-code-review-pattern-recognition`) — Patterns and research
+- Florence (`4-code-review-performance-oracle`) — Performance and scale
+- Kevin (`4-code-review-security-sentinel`) — Security vulnerabilities
 
 **Language-Specific (based on detected languages):**
-- Kieran (`kieran-rails-reviewer`) — Ruby/Rails
-- Kieran (`kieran-python-reviewer`) — Python
-- Kieran (`kieran-typescript-reviewer`) — TypeScript
-- DHH (`dhh-rails-reviewer`) — Rails philosophy
-- Julik (`julik-frontend-races-reviewer`) — JavaScript/Stimulus races
+- Julik (`4-code-review-julik-frontend-races`) — JavaScript/Stimulus races
 
 ---
 
@@ -92,16 +88,16 @@ Launch all applicable reviewers in parallel. Each reviewer analyzes the code ind
 
 ```
 # Launch all reviewers in parallel
-Task robo-agent-native-reviewer(PR diff and context) → round1_robo.md
-Task maya-architecture-strategist(PR diff and context) → round1_maya.md
-Task alex-code-simplicity-reviewer(PR diff and context) → round1_alex.md
-Task corey-test-reviewer(PR diff and test files) → round1_corey.md
-Task donna-data-integrity-guardian(PR diff and context) → round1_donna.md
-Task erin-process-reviewer(PR context and history) → round1_erin.md
-Task jim-git-reviewer(commit history and PR metadata) → round1_jim.md
-Task sandi-pattern-recognition-specialist(PR diff and context) → round1_sandi.md
-Task florence-performance-oracle(PR diff and context) → round1_florence.md
-Task kevin-security-sentinel(PR diff and context) → round1_kevin.md
+Task 4-code-review-agent-native(PR diff and context) → round1_robo.md
+Task 4-code-review-architecture(PR diff and context) → round1_maya.md
+Task 4-code-review-code-simplicity(PR diff and context) → round1_alex.md
+Task 4-code-review-corey-test(PR diff and test files) → round1_corey.md
+Task 4-code-review-data-integrity(PR diff and context) → round1_donna.md
+Task 5-compound-erin-process(PR context and history) → round1_erin.md
+Task 4-code-review-jim-git(commit history and PR metadata) → round1_jim.md
+Task 4-code-review-pattern-recognition(PR diff and context) → round1_sandi.md
+Task 4-code-review-performance-oracle(PR diff and context) → round1_florence.md
+Task 4-code-review-security-sentinel(PR diff and context) → round1_kevin.md
 [Plus language-specific reviewers as applicable]
 ```
 
@@ -122,7 +118,7 @@ Abby reviews all Round 1 reports and recommends which reviewers should participa
 ### Abby's Triage Criteria
 
 ```
-Task abby-review-synthesis("Review these Round 1 reports and recommend which reviewers should participate in Round 2.
+Task 4-code-review-abby-synthesis("Review these Round 1 reports and recommend which reviewers should participate in Round 2.
 
 Consider:
 - Which reviewers found significant issues?
@@ -227,7 +223,7 @@ Abby receives all Round 2 reports (plus Round 1 reports from reviewers who skipp
 ### Abby's Final Synthesis
 
 ```
-Task abby-review-synthesis("Synthesize these enriched review reports into a final summary.
+Task 4-code-review-abby-synthesis("Synthesize these enriched review reports into a final summary.
 
 **Round 2 Reports (enriched):**
 [Round 2 reports from participants]

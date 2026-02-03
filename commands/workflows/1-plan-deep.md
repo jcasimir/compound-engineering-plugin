@@ -331,11 +331,13 @@ cat ~/.claude/plugins/installed_plugins.json
 - Any local plugins
 
 **For compound-engineering plugin specifically:**
-- USE: `agents/review/*` (all reviewers)
-- USE: `agents/research/*` (all researchers)
-- USE: `agents/design/*` (design agents)
-- USE: `agents/docs/*` (documentation agents)
-- SKIP: `agents/workflow/*` (these are workflow orchestrators, not reviewers)
+- USE: `agents/2-plan-review-*` (plan reviewers)
+- USE: `agents/4-code-review-*` (code reviewers)
+- USE: `agents/0-brainstorm-*` (research agents)
+- USE: `agents/1-plan-*` (research agents)
+- USE: `agents/3-code-*` (design/code agents)
+- USE: `agents/5-compound-*` (documentation agents)
+- SKIP: `agents/other-*` (on-demand utilities)
 
 **Step 2: For each discovered agent, read its description**
 
@@ -359,7 +361,7 @@ Task [agent-name]: "Review this plan using your expertise. Apply all your checks
 
 **Step 4: Also discover and run research agents**
 
-Research agents (like `best-practices-researcher`, `framework-docs-researcher`, `git-history-analyzer`, `repo-research-analyst`) should also be run for relevant plan sections.
+Research agents (like `1-plan-best-practices-research`, `1-plan-framework-docs-research`, `other-git-history-analyzer`, `0-brainstorm-repo-research`) should also be run for relevant plan sections.
 
 ### 6. Wait for ALL Agents and Synthesize Everything
 
