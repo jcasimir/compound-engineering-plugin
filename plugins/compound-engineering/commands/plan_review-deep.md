@@ -17,11 +17,13 @@ This is **not** your everyday plan review. Use it for:
 - Plans where diverse perspectives are crucial
 - When you want product, design, and engineering viewpoints to cross-pollinate
 
-This takes longer than a standard plan review. That's the point — you're getting five distinct worldviews to build on each other.
+This takes longer than a standard plan review. That's the point — you're getting eight distinct worldviews (product strategy + technical architecture) to build on each other.
 
 ## The Reviewers
 
 Each brings a radically different lens:
+
+### Product & Strategy
 
 | Reviewer | Lens | Core Question |
 |----------|------|---------------|
@@ -30,6 +32,14 @@ Each brings a radically different lens:
 | **Marty Cagan** | Discovery & Validation | "What's the evidence? Have we validated the risks?" |
 | **Melissa Perri** | Outcomes & Strategy | "Is this outcome-driven or are we in the build trap?" |
 | **Sandy Speicher** | Human-Centered & Equity | "Who's affected? Whose voices are missing?" |
+
+### Technical Architecture
+
+| Reviewer | Lens | Core Question |
+|----------|------|---------------|
+| **Steve Kinney** | Frontend Architecture | "Will this scale? Is this simple enough to maintain?" |
+| **Avi** | Rails Architecture | "Does this follow Rails conventions? What's the ecosystem doing?" |
+| **Greg Baugues** | AI Integration | "Is this the right use of AI? What are the real risks?" |
 
 ## The Process
 
@@ -83,11 +93,18 @@ Launch all five plan reviewers in parallel. Each reviewer analyzes the plan inde
 
 ```
 # Launch all plan reviewers in parallel
+
+# Product & Strategy
 Task jason-fried-plan-reviewer(Plan context) → round1_jason.md
 Task charles-eames-plan-reviewer(Plan context) → round1_charles.md
 Task marty-cagan-plan-reviewer(Plan context) → round1_marty.md
 Task melissa-perri-plan-reviewer(Plan context) → round1_melissa.md
 Task sandy-speicher-plan-reviewer(Plan context) → round1_sandy.md
+
+# Technical Architecture
+Task steve-frontend-architect(Plan context) → round1_steve.md
+Task avi-rails-architect(Plan context) → round1_avi.md
+Task greg-ai-reviewer(Plan context) → round1_greg.md
 ```
 
 ### Collect Round 1 Reports
@@ -174,6 +191,8 @@ You are [Name], and you've completed your initial review of this plan. Now you h
 
 **Your Colleagues' Round 1 Reports:**
 
+*Product & Strategy:*
+
 **Jason Fried (Scope & Sustainability):**
 [Jason's report]
 
@@ -188,6 +207,17 @@ You are [Name], and you've completed your initial review of this plan. Now you h
 
 **Sandy Speicher (Human-Centered & Equity):**
 [Sandy's report]
+
+*Technical Architecture:*
+
+**Steve Kinney (Frontend Architecture):**
+[Steve's report]
+
+**Avi (Rails Architecture):**
+[Avi's report]
+
+**Greg Baugues (AI Integration):**
+[Greg's report]
 
 ---
 
@@ -276,9 +306,9 @@ Produce a synthesis that honors each reviewer's unique perspective while creatin
 **Process:** Two-round collaborative review with cross-pollination
 
 ### Review Summary
-- **Round 1 Participants:** 5 reviewers (Jason, Charles, Marty, Melissa, Sandy)
+- **Round 1 Participants:** 8 reviewers (Jason, Charles, Marty, Melissa, Sandy, Steve, Avi, Greg)
 - **Round 2 Participants:** [X] reviewers (selected by Erin)
-- **Perspectives Represented:** Business/Scope, Systems/Design, Product/Validation, Strategy/Outcomes, Human-Centered/Equity
+- **Perspectives Represented:** Business/Scope, Systems/Design, Product/Validation, Strategy/Outcomes, Human-Centered/Equity, Frontend Architecture, Rails Architecture, AI Integration
 
 ---
 
@@ -356,16 +386,21 @@ Notable interactions from the cross-pollination:
 
 ## Notes
 
-**Why these five reviewers?**
+**Why these eight reviewers?**
 
-Each represents a fundamentally different worldview:
+**Product & Strategy** — Different worldviews on what to build:
 - **Jason** (37signals) — "Is this too much? Can we ship smaller?"
 - **Charles** (Eames) — "Is this the right problem? Do constraints shape this?"
 - **Marty** (SVPG) — "Have we validated this? What are the risks?"
 - **Melissa** (Produx) — "Is this outcome-driven or feature-driven?"
 - **Sandy** (IDEO) — "Who's affected? Is this human-centered?"
 
-When these perspectives cross-pollinate, you get insights none would produce alone.
+**Technical Architecture** — Different worldviews on how to build:
+- **Steve** (Frontend Masters/Temporal) — "Will this scale? Is this maintainable?"
+- **Avi** (Rails ecosystem) — "Does this follow conventions? What's the ecosystem doing?"
+- **Greg** (AI practitioner) — "Is AI the right tool here? What actually works vs. hype?"
+
+When product strategy and technical architecture perspectives cross-pollinate during planning, you catch issues before they're built — not after.
 
 **Why Erin as orchestrator?**
 
