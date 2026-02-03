@@ -7,26 +7,109 @@ description: This skill should be used when generating and editing images using 
 
 Generate and edit images using Google's Gemini API. The environment variable `GEMINI_API_KEY` must be set.
 
-## Default Model
+## Setup (One-Time)
 
-| Model | Resolution | Best For |
-|-------|------------|----------|
-| `gemini-3-pro-image-preview` | 1K-4K | All image generation (default) |
+Create a Python virtual environment with required dependencies:
 
-**Note:** Always use this Pro model. Only use a different model if explicitly requested.
+```bash
+# Create venv (use a persistent location)
+python3 -m venv ~/.gemini-venv
+
+# Install dependencies
+~/.gemini-venv/bin/pip install google-genai Pillow
+```
+
+Ensure `GEMINI_API_KEY` is set in your shell profile (`~/.zshrc` or `~/.bashrc`):
+
+```bash
+export GEMINI_API_KEY="your-api-key-here"
+```
+
+## Quick Start - Use the Scripts
+
+This skill includes ready-to-use scripts in the `scripts/` directory. **Always use these instead of writing code from scratch.**
+
+First, find the scripts directory:
+```bash
+SCRIPTS_DIR=$(dirname "$(find ~/.claude/plugins/cache -name 'generate_image.py' -path '*/gemini-imagegen/*' 2>/dev/null | head -1)")
+```
+
+### Generate an Image
+
+```bash
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/generate_image.py" "A soccer ball on grass" output.jpg
+```
+
+Options:
+- `--model` / `-m`: Model to use (`gemini-2.5-flash-image` default, or `gemini-3-pro-image-preview`)
+- `--aspect` / `-a`: Aspect ratio (`1:1`, `16:9`, `9:16`, etc.)
+- `--size` / `-s`: Resolution (`1K`, `2K`, `4K`)
+
+Example with options:
+```bash
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/generate_image.py" \
+  "Epic mountain landscape at sunset" \
+  landscape.jpg \
+  --aspect 16:9 \
+  --size 2K
+```
+
+### Edit an Existing Image
+
+```bash
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/edit_image.py" \
+  input.jpg \
+  "Add a rainbow to the sky" \
+  output.jpg
+```
+
+### Compose Multiple Images
+
+```bash
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/compose_images.py" \
+  "Create a collage of these photos" \
+  output.jpg \
+  photo1.jpg photo2.jpg photo3.jpg
+```
+
+### Multi-Turn Refinement (Interactive)
+
+```bash
+~/.gemini-venv/bin/python "$SCRIPTS_DIR/multi_turn_chat.py" output.jpg
+# Then enter prompts interactively to refine the image
+```
+
+## Available Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `generate_image.py` | Text-to-image generation |
+| `edit_image.py` | Edit existing images with prompts |
+| `compose_images.py` | Combine multiple reference images |
+| `multi_turn_chat.py` | Iterative refinement via chat |
+| `gemini_images.py` | Full-featured CLI with all options |
+
+## Models
+
+| Model | Best For | Notes |
+|-------|----------|-------|
+| `gemini-2.5-flash-image` | Fast generation (default) | Works on free tier |
+| `gemini-2.0-flash-exp-image-generation` | Experimental features | Works on free tier |
+| `gemini-3-pro-image-preview` | Higher quality, 4K support | May require billing enabled |
 
 ## Quick Reference
-
-### Default Settings
-- **Model:** `gemini-3-pro-image-preview`
-- **Resolution:** 1K (default, options: 1K, 2K, 4K)
-- **Aspect Ratio:** 1:1 (default)
 
 ### Available Aspect Ratios
 `1:1`, `2:3`, `3:2`, `3:4`, `4:3`, `4:5`, `5:4`, `9:16`, `16:9`, `21:9`
 
 ### Available Resolutions
-`1K` (default), `2K`, `4K`
+`1K` (default), `2K`, `4K` (4K requires pro model)
+
+---
+
+## API Reference (Advanced)
+
+For custom implementations, here are the API patterns:
 
 ## Core API Pattern
 
