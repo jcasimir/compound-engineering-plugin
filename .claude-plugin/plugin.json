@@ -1,13 +1,13 @@
 {
   "name": "compound-engineering",
   "version": "2.34.0",
-  "description": "AI-powered development tools. 36 agents, 26 commands, 15 skills, 1 MCP server for code review, research, design, and workflow automation.",
+  "description": "AI-powered development tools for code review, research, design, and workflow automation. (Based on \"Compound Engineering\" by Kieran Klaassen and Every)",
   "author": {
-    "name": "Kieran Klaassen & Jeff Casimir",
-    "email": "kieran@every.to",
-    "url": "https://github.com/kieranklaassen"
+    "name": "Jeff Casimir",
+    "email": "jeff@casimircreative.com",
+    "url": "https://github.com/jcasimir"
   },
-  "homepage": "https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it",
+  "homepage": "https://github.com/jcasimir/compound-engineering-plugin",
   "repository": "https://github.com/jcasimir/compound-engineering-plugin",
   "license": "MIT",
   "keywords": [
