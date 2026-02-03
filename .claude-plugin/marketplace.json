@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "compound-engineering",
+  "owner": {
+    "name": "Jeff Casimir"
+  },
+  "plugins": [
+    {
+      "name": "compound-engineering",
+      "source": "./plugins/compound-engineering",
+      "description": "AI-powered development tools for code review, research, design, and workflow automation"
+    }
+  ]
+}
