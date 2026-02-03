@@ -124,7 +124,7 @@ Erin reviews all Round 1 reports and recommends which reviewers should participa
 ### Erin's Triage Task
 
 ```
-Task 5-compound-erin-process("Review these Round 1 plan reviews and recommend which reviewers should participate in Round 2.
+Task other-erin("Review these Round 1 plan reviews and recommend which reviewers should participate in Round 2.
 
 **Your Role:** You're orchestrating a collaborative review process. Round 2 lets reviewers build on each other's insights.
 
@@ -259,7 +259,7 @@ Erin receives all Round 2 reports (plus Round 1 reports from reviewers who skipp
 ### Erin's Final Synthesis
 
 ```
-Task 5-compound-erin-process("Synthesize these enriched plan review reports into a final summary for the user.
+Task other-erin("Synthesize these enriched plan review reports into a final summary for the user.
 
 **Context:** This plan went through a two-round collaborative review. In Round 2, reviewers read each other's reports and rewrote their own with cross-pollinated insights. They've explicitly referenced each other's perspectives.
 

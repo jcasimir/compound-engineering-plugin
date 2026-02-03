@@ -20,14 +20,25 @@ Compound engineering inverts this. 80% is in planning and review, 20% is in exec
 /plugin install https://github.com/jcasimir/compound-engineering-plugin
 ```
 
+## Quick Start
+
+```bash
+/erin I want to build [your feature]
+```
+
+**Erin** is your project manager. She guides you through the entire workflow, ensuring steps happen in the right order and nothing gets missed.
+
 ## Workflow
 
+Erin orchestrates these phases (or invoke them directly):
+
 ```
-Brainstorm → Plan → Plan Review → Code → Code Review → Compound → Repeat
+/erin → Brainstorm → Plan → Plan Review → Code → Code Review → Compound → Repeat
 ```
 
 | # | Command | Purpose |
 |---|---------|---------|
+| — | `/erin` | **Start here.** Project manager for the full workflow |
 | 0 | `/workflows:0-brainstorm` | Explore requirements before planning |
 | 1 | `/workflows:1-plan` | Turn feature ideas into detailed implementation plans |
 | 2 | `/workflows:2-plan-review` | Multi-agent plan review before coding |
@@ -38,6 +49,14 @@ Brainstorm → Plan → Plan Review → Code → Code Review → Compound → Re
 Each cycle compounds: plans inform future plans, reviews catch more issues, patterns get documented.
 
 ## Profiles
+
+### Project Manager
+
+| Name | Role | What I Bring |
+|------|------|--------------|
+| Erin | Engineering PM | I orchestrate the full workflow from brainstorm to compound. Steps happen in the right order, nothing gets missed, and learnings compound. |
+
+### Reviewers
 
 Two teams of reviewers guide your work through planning and implementation.
 

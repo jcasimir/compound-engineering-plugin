@@ -17,11 +17,21 @@ Agents are named by workflow phase prefix:
 - `3-code-*.md` — Design sync, linting, bug reproduction (Phase 3)
 - `4-code-review-*.md` — Code reviewers (Phase 4)
 - `5-compound-*.md` — Process review, documentation (Phase 5)
-- `other-*.md` — On-demand utilities (pr-comment-resolver, git-history-analyzer)
+- `other-*.md` — Cross-phase agents (erin = orchestrator, pr-comment-resolver, git-history-analyzer)
+
+## Getting Started
+
+**Start with Erin:** `/erin [what you want to build]`
+
+Erin is the project manager who orchestrates the entire workflow. She'll guide you through the right steps based on your project's scope.
 
 ## Workflow Commands
 
-Numbered sequence: 0-brainstorm → 1-plan → 2-plan-review → 3-code → 4-code-review → 5-compound
+Erin manages these phases (or invoke directly):
+
+```
+/erin → 0-brainstorm → 1-plan → 2-plan-review → 3-code → 4-code-review → 5-compound
+```
 
 ## Adding Components
 

@@ -67,7 +67,7 @@ The reviewers available for this deep review:
 - Donna (`4-code-review-data-integrity`) — Data integrity
 - Dana (`4-code-review-data-migration`) — Migration safety (if migrations present)
 - Nathan (`4-code-review-deployment-verification`) — Deployment readiness (if risky changes)
-- Erin (`5-compound-erin-process`) — Process adherence
+- Erin (`other-erin`) — Process adherence
 - Jim (`4-code-review-jim-git`) — Git history and storytelling
 - Sandi (`4-code-review-pattern-recognition`) — Patterns and research
 - Florence (`4-code-review-performance-oracle`) — Performance and scale
@@ -93,7 +93,7 @@ Task 4-code-review-architecture(PR diff and context) → round1_maya.md
 Task 4-code-review-code-simplicity(PR diff and context) → round1_alex.md
 Task 4-code-review-corey-test(PR diff and test files) → round1_corey.md
 Task 4-code-review-data-integrity(PR diff and context) → round1_donna.md
-Task 5-compound-erin-process(PR context and history) → round1_erin.md
+Task other-erin(PR context and history) → round1_erin.md
 Task 4-code-review-jim-git(commit history and PR metadata) → round1_jim.md
 Task 4-code-review-pattern-recognition(PR diff and context) → round1_sandi.md
 Task 4-code-review-performance-oracle(PR diff and context) → round1_florence.md
