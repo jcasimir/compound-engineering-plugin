@@ -3,10 +3,17 @@
 ## Directory Structure
 
 ```
-agents/       # Specialized review, research, design, workflow, docs agents
+agents/       # Flat folder, agents prefixed by workflow phase or "other-"
 commands/     # Slash commands (workflows/ for numbered sequence)
 skills/       # Skills with SKILL.md files
 ```
+
+## Agent Naming Convention
+
+Agents are named by workflow phase prefix:
+- `2-plan-review-*.md` — Plan reviewers (Phase 2)
+- `4-code-review-*.md` — Code reviewers (Phase 4)
+- `other-*.md` — Research, design, workflow, docs agents
 
 ## Workflow Commands
 
@@ -16,11 +23,11 @@ Numbered sequence: 0-brainstorm → 1-plan → 2-plan-review → 3-code → 4-co
 
 ### Agents
 
-Add `.md` file to appropriate `agents/` subdirectory with frontmatter:
+Add `.md` file to `agents/` with appropriate prefix and frontmatter:
 
 ```yaml
 ---
-name: agent-name
+name: 2-plan-review-reviewer-name   # or 4-code-review-*, other-*
 description: "When to use this agent. Include <example> blocks showing context, user message, assistant response, and <commentary>."
 model: inherit
 ---

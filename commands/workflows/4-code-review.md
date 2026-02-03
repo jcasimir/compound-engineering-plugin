@@ -63,24 +63,13 @@ If a review agent flags any file in these directories for cleanup or removal, di
 
 <dynamic_agent_discovery>
 
-**IMPORTANT:** Review agents are discovered dynamically from the plugin's `agents/review/` directory. This ensures new agents are automatically included without manual updates.
+**IMPORTANT:** Review agents are discovered dynamically by finding all `4-code-review-*.md` files in the `agents/` directory. This ensures new agents are automatically included without manual updates.
 
 **Discovery Process:**
 
-1. List all `.md` files in `agents/review/` directory
+1. List all `4-code-review-*.md` files in `agents/` directory
 2. Extract agent names (filename without `.md` extension)
-3. Detect project languages to select appropriate language-specific reviewers
-4. Build the list of agents to run
-
-**Language Detection (for Kieran reviewers):**
-
-| PR File Patterns | Language | Kieran Reviewer |
-|------------------|----------|-----------------|
-| `*.rb`, `Gemfile`, `*.erb` | Ruby/Rails | `kieran-rails-reviewer` |
-| `*.ts`, `*.tsx`, `tsconfig.json` | TypeScript | `kieran-typescript-reviewer` |
-| `*.py`, `requirements.txt`, `pyproject.toml` | Python | `kieran-python-reviewer` |
-
-Only run the Kieran reviewer(s) matching the detected language(s). If multiple languages are present, run multiple Kieran reviewers.
+3. Build the list of agents to run
 
 </dynamic_agent_discovery>
 
@@ -88,40 +77,33 @@ Only run the Kieran reviewer(s) matching the detected language(s). If multiple l
 
 <parallel_tasks>
 
-**Run ALL discovered review agents in parallel.** The current agents in `agents/review/` include:
+**Run ALL discovered review agents in parallel.** The current agents matching `4-code-review-*.md` include:
 
-**Always Run (Universal Reviewers):**
-- `agent-native-reviewer` - Verify new features are agent-accessible
-- `architecture-strategist` - Architectural compliance and design review
-- `code-simplicity-reviewer` - Final pass for simplicity and YAGNI
-- `corey-test-reviewer` - Test suite quality and hourglass testing
-- `data-integrity-guardian` - Database and data integrity concerns
-- `jim-git-reviewer` - Git history, commits, and collaboration story
-- `pattern-recognition-specialist` - Design patterns and anti-patterns
-- `performance-oracle` - Performance analysis and optimization
-- `security-sentinel` - Security audits and vulnerability assessment
-
-**Language-Specific (Run based on detected languages):**
-- `kieran-rails-reviewer` - Ruby/Rails conventions (if Ruby detected)
-- `kieran-typescript-reviewer` - TypeScript conventions (if TypeScript detected)
-- `kieran-python-reviewer` - Python conventions (if Python detected)
-- `dhh-rails-reviewer` - DHH's Rails philosophy (if Ruby detected)
-- `julik-frontend-races-reviewer` - JavaScript/Stimulus race conditions (if JS/TS detected)
+- `4-code-review-agent-native` - Verify new features are agent-accessible
+- `4-code-review-architecture` - Architectural compliance and design review
+- `4-code-review-code-simplicity` - Final pass for simplicity and YAGNI
+- `4-code-review-corey-test` - Test suite quality and hourglass testing
+- `4-code-review-data-integrity` - Database and data integrity concerns
+- `4-code-review-jim-git` - Git history, commits, and collaboration story
+- `4-code-review-pattern-recognition` - Design patterns and anti-patterns
+- `4-code-review-performance-oracle` - Performance analysis and optimization
+- `4-code-review-security-sentinel` - Security audits and vulnerability assessment
+- `4-code-review-julik-frontend-races` - JavaScript/Stimulus race conditions
 
 **Execution:**
 
 ```
-# Launch all applicable agents in parallel
-Task agent-native-reviewer(PR diff and context)
-Task architecture-strategist(PR diff and context)
-Task code-simplicity-reviewer(PR diff and context)
-Task corey-test-reviewer(PR diff and test files)
-Task data-integrity-guardian(PR diff and context)
-Task jim-git-reviewer(commit history and PR metadata)
-Task pattern-recognition-specialist(PR diff and context)
-Task performance-oracle(PR diff and context)
-Task security-sentinel(PR diff and context)
-Task [language-specific-reviewers](PR diff and context)
+# Launch all 4-code-review-* agents in parallel
+Task 4-code-review-agent-native(PR diff and context)
+Task 4-code-review-architecture(PR diff and context)
+Task 4-code-review-code-simplicity(PR diff and context)
+Task 4-code-review-corey-test(PR diff and test files)
+Task 4-code-review-data-integrity(PR diff and context)
+Task 4-code-review-jim-git(commit history and PR metadata)
+Task 4-code-review-pattern-recognition(PR diff and context)
+Task 4-code-review-performance-oracle(PR diff and context)
+Task 4-code-review-security-sentinel(PR diff and context)
+Task 4-code-review-julik-frontend-races(PR diff and context)
 ```
 
 </parallel_tasks>
@@ -141,8 +123,8 @@ Trigger conditions:
 - PR title/body mentions: migration, backfill, data transformation
 
 Run these additional agents:
-- `data-migration-expert` - Validates ID mappings match production, checks for swapped values, verifies rollback safety
-- `deployment-verification-agent` - Creates Go/No-Go deployment checklist with SQL verification queries and rollback procedures
+- `4-code-review-data-migration` - Validates ID mappings match production, checks for swapped values, verifies rollback safety
+- `4-code-review-deployment-verification` - Creates Go/No-Go deployment checklist with SQL verification queries and rollback procedures
 
 </conditional_agents>
 
@@ -243,11 +225,11 @@ Complete system context map with component interactions
 
 ### 4. Simplification and Minimalism Review
 
-Run the Task code-simplicity-reviewer() to see if we can simplify the code.
+Run the Task 4-code-review-code-simplicity() to see if we can simplify the code.
 
 ### 5. Findings Synthesis with Abby
 
-<critical_requirement> After all review agents complete, use Abby (abby-review-synthesis) to synthesize findings into a coherent, prioritized summary. Abby acts as the project manager of the review. </critical_requirement>
+<critical_requirement> After all review agents complete, use Abby (4-code-review-abby-synthesis) to synthesize findings into a coherent, prioritized summary. Abby acts as the project manager of the review. </critical_requirement>
 
 #### Step 1: Synthesize with Abby
 
@@ -256,7 +238,7 @@ Run the Task code-simplicity-reviewer() to see if we can simplify the code.
 **Pass all agent findings to Abby for synthesis:**
 
 ```
-Task abby-review-synthesis(all agent findings and PR context)
+Task 4-code-review-abby-synthesis(all agent findings and PR context)
 ```
 
 **Before synthesis, filter findings:**
@@ -436,7 +418,7 @@ After creating all todo files, present comprehensive summary:
 
 ### Review Agents Used:
 
-[List all agents that were actually run - discovered dynamically from agents/review/]
+[List all agents that were actually run - discovered dynamically from agents/4-code-review-*.md]
 
 ### Next Steps:
 
