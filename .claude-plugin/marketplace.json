@@ -9,6 +9,11 @@
       "name": "compound-engineering",
       "source": "./plugins/compound-engineering",
       "description": "AI-powered development tools for code review, research, design, and workflow automation"
+    },
+    {
+      "name": "imagegen",
+      "source": "./plugins/imagegen",
+      "description": "AI image generation with style presets and multi-image support. Powered by Google Gemini."
     }
   ]
 }
