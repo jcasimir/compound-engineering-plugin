@@ -11,9 +11,13 @@ skills/       # Skills with SKILL.md files
 ## Agent Naming Convention
 
 Agents are named by workflow phase prefix:
+- `0-brainstorm-*.md` — Research agents for exploration (Phase 0)
+- `1-plan-*.md` — Research agents for planning (Phase 1)
 - `2-plan-review-*.md` — Plan reviewers (Phase 2)
+- `3-code-*.md` — Design sync, linting, bug reproduction (Phase 3)
 - `4-code-review-*.md` — Code reviewers (Phase 4)
-- `other-*.md` — Research, design, workflow, docs agents
+- `5-compound-*.md` — Process review, documentation (Phase 5)
+- `other-*.md` — On-demand utilities (pr-comment-resolver, git-history-analyzer)
 
 ## Workflow Commands
 
@@ -27,7 +31,7 @@ Add `.md` file to `agents/` with appropriate prefix and frontmatter:
 
 ```yaml
 ---
-name: 2-plan-review-reviewer-name   # or 4-code-review-*, other-*
+name: {phase}-{agent-name}   # e.g., 2-plan-review-jason-fried, 4-code-review-corey-test
 description: "When to use this agent. Include <example> blocks showing context, user message, assistant response, and <commentary>."
 model: inherit
 ---
