@@ -1,0 +1,23 @@
+{
+  "name": "leadership-ops",
+  "version": "1.0.0",
+  "description": "Leadership and administrative workflows: email triage, meeting prep, 1:1 management, and decision review",
+  "author": {
+    "name": "Jeff Casimir",
+    "email": "jeff@casimircreative.com",
+    "url": "https://github.com/jcasimir"
+  },
+  "homepage": "https://github.com/jcasimir/compound-engineering-plugin",
+  "repository": "https://github.com/jcasimir/compound-engineering-plugin",
+  "license": "MIT",
+  "keywords": [
+    "leadership",
+    "email-triage",
+    "meeting-prep",
+    "1on1-management",
+    "calendar-sync",
+    "outlook",
+    "jira-integration",
+    "browser-automation"
+  ]
+}
