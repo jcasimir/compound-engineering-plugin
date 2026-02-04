@@ -1,5 +1,5 @@
 ---
-name: calendar-sync
+name: admin:calendar-sync
 description: Sync Outlook calendar events to Google Calendar (browser + API hybrid)
 argument-hint: "[fast|mid|full]"
 ---

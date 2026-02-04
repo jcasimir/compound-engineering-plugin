@@ -1,5 +1,5 @@
 ---
-name: archive-sweep
+name: admin:inbox:archive-sweep
 description: Auto-archive emails above 80% confidence threshold
 argument-hint: "[confidence-threshold]"
 ---
