@@ -1,5 +1,5 @@
 ---
-name: prep
+name: 1on1:prep
 description: Prepare for a 1:1 meeting with history and context
 argument-hint: "[person-name]"
 ---

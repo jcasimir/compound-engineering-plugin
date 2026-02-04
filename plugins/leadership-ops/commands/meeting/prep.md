@@ -1,5 +1,5 @@
 ---
-name: prep
+name: meeting:prep
 description: Prepare for a meeting with context gathering
 argument-hint: "[meeting-name or attendee]"
 ---

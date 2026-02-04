@@ -1,5 +1,5 @@
 ---
-name: needs-response
+name: admin:inbox:needs-response
 description: Identify emails needing response and create Jira tickets for tracking
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: inbox
+name: admin:inbox
 description: Email inbox management orchestrator - runs triage, archive-sweep, and needs-response
 ---
 
