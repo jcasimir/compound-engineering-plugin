@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/agents/1-plan-learnings-research.md

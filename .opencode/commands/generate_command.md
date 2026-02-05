@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/commands/generate_command.md

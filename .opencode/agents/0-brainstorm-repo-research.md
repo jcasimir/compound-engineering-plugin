@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/agents/0-brainstorm-repo-research.md

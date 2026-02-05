@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/commands/resolve_pr_parallel.md

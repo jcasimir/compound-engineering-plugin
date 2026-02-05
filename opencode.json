@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "description": "OpenCode configuration for Compound Engineering Plugin repo",
+  "autoupdate": true,
+  "permission": {
+    "skill": {
+      "*": "allow"
+    },
+    "bash": "ask",
+    "write": "ask"
+  }
+}

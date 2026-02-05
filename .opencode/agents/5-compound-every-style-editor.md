@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/agents/5-compound-every-style-editor.md

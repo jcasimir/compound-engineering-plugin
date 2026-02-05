@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/agents/2-plan-review-greg-ai.md

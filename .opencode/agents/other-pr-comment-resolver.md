@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/agents/other-pr-comment-resolver.md

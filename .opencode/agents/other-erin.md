@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/agents/other-erin.md

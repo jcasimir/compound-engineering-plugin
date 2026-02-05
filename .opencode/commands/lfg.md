@@ -1,0 +1,1 @@
+../../plugins/compound-engineering/commands/lfg.md
