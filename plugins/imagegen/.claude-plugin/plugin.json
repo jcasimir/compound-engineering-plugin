@@ -17,5 +17,6 @@
     "text-to-image",
     "image-editing",
     "style-presets"
-  ]
+  ],
+  "skills": ["../skills/"]
 }

@@ -19,5 +19,7 @@
     "outlook",
     "jira-integration",
     "browser-automation"
-  ]
+  ],
+  "commands": ["../commands/"],
+  "skills": ["../skills/"]
 }

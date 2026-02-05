@@ -23,6 +23,9 @@
     "agent-browser",
     "browser-automation"
   ],
+  "agents": ["../agents/"],
+  "commands": ["../commands/"],
+  "skills": ["../skills/"],
   "mcpServers": {
     "context7": {
       "type": "http",

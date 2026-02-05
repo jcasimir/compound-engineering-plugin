@@ -31,7 +31,7 @@ This skill includes ready-to-use scripts in the `scripts/` directory. **Always u
 
 First, find the scripts directory:
 ```bash
-SCRIPTS_DIR=$(dirname "$(find ~/.claude/plugins/cache -name 'generate_image.py' -path '*/imagegen/*' 2>/dev/null | head -1)")
+SCRIPTS_DIR="${CLAUDE_PLUGIN_ROOT}/skills/imagegen/scripts"
 ```
 
 ### Generate an Image
