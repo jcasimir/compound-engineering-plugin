@@ -20,6 +20,6 @@
     "jira-integration",
     "browser-automation"
   ],
-  "commands": ["./commands/"],
-  "skills": ["./skills/"]
+  "commands": "./commands/",
+  "skills": "./skills/"
 }

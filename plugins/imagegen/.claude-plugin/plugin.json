@@ -18,5 +18,5 @@
     "image-editing",
     "style-presets"
   ],
-  "skills": ["./skills/"]
+  "skills": "./skills/"
 }
